@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+        <!-- Standard favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+    <!-- Apple devices -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <!-- Android / PWA -->
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png">
+
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    
+    <!-- Prevent zoom on input focus for iOS -->
+    <script>
+      if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
+        document.addEventListener('DOMContentLoaded', function() {
+          var meta = document.querySelector('meta[name=viewport]');
+          if (meta) {
+            meta.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no');
+          }
+        });
+      }
+    </script>
+    <title>Badilisha Properties | Property Swapping Made Simple</title>
+    <meta name="description" content="Swap your property without selling first. Badilisha Properties simplifies home transitions through innovative property swapping. Fast, fair, and transparent." />
+    <meta property="og:title" content="Badilisha Properties | Property Swapping Made Simple" />
+    <meta property="og:description" content="Move into your next home without the wait. Property swapping reimagined for modern living." />
+    <meta property="og:image" content="https://bolt.new/static/og_default.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Badilisha Properties | Property Swapping Made Simple" />
+    <meta name="twitter:description" content="Move into your next home without the wait. Property swapping reimagined for modern living." />
+    <meta name="twitter:image" content="https://bolt.new/static/og_default.png" />
+    <!-- Google Fonts: Playfair Display & DM Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
