@@ -1,38 +1,37 @@
 /*
-  # Create Contact Inquiries Table
+  # Create Contact Inquiries Table (Aligned with Frontend)
 
   ## Overview
   This migration creates a table to store contact form submissions from potential clients
   interested in property swaps through Badilisha Properties.
 
+  The schema is intentionally aligned with the current React contact form
+  to avoid insert failures and ensure a stable production setup.
+
   ## New Tables
     - `contact_inquiries`
       - `id` (uuid, primary key) - Unique identifier for each inquiry
       - `full_name` (text) - Contact's full name
-      - `email` (text) - Contact's email address
-      - `phone` (text, optional) - Contact's phone number
-      - `property_type` (text, optional) - Type of property they own (e.g., house, apartment, land)
-      - `location` (text, optional) - Property location
-      - `interest_type` (text, optional) - What they're interested in (upgrade, downsize, relocate, etc.)
-      - `message` (text, optional) - Additional message or details
+      - `phone` (text) - Contact's phone number
+      - `location` (text) - Property location
+      - `property_type` (text, optional) - Type of property (house, apartment, land)
+      - `goal` (text, optional) - Client’s goal or request
+      - `status` (text) - Inquiry status (new, contacted, in_progress, completed)
       - `created_at` (timestamptz) - Timestamp of inquiry submission
-      - `status` (text) - Status of inquiry (new, contacted, in_progress, completed)
-  
+
   ## Security
     - Enable RLS on `contact_inquiries` table
-    - Add policy for anonymous users to insert inquiries
-    - Add policy for authenticated admins to view all inquiries
+    - Allow anonymous users to submit inquiries
+    - Allow authenticated users (admins) to read inquiries
 */
 
 CREATE TABLE IF NOT EXISTS contact_inquiries (
   id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
   full_name text NOT NULL,
-  email text NOT NULL,
-  phone text,
+  phone text NOT NULL,
+  location text NOT NULL,
   property_type text,
-  location text,
-  interest_type text,
-  message text,
+  goal text,
   status text DEFAULT 'new' NOT NULL,
   created_at timestamptz DEFAULT now() NOT NULL
 );

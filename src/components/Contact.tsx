@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Send, CheckCircle, MessageCircle, Shield } from 'lucide-react';
+import { CheckCircle, MessageCircle, Shield } from 'lucide-react';
+const WHATSAPP_NUMBER = import.meta.env.VITE_WHATSAPP_NUMBER;
 import { supabase } from '../lib/supabase';
 
 export default function Contact() {
@@ -32,21 +33,40 @@ export default function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
     setError('');
+    console.log('📤 Submitting formData:', formData);
 
     try {
       if (supabase) {
-        const { error: submitError } = await supabase
+        const { data: sessionData } = await supabase.auth.getSession();
+        console.log('Supabase session:', sessionData);
+
+        const { data, error: submitError } = await supabase
           .from('contact_inquiries')
-          .insert([formData]);
-        if (submitError) throw submitError;
+              .insert([{
+                full_name: formData.full_name,
+                phone: formData.phone,
+                location: formData.location,
+                property_type: formData.property_type,
+                email: 'no-email@badilisha.app', // placeholder
+                message: formData.goal
+              }])
+          .select();
+
+        if (submitError) {
+          console.error('❌ Supabase insert error:', submitError);
+          setError(submitError.message);
+          return;
+        }
+
+        console.log('✅ Supabase insert success:', data);
+
       }
       
       setIsSuccess(true);
-      const whatsappMsg = `Hello, I'm ${formData.full_name}. I'm interested in ${formData.goal} for my ${formData.property_type} in ${formData.location}.`;
-      window.open(`https://wa.me/254700000000?text=${encodeURIComponent(whatsappMsg)}`, '_blank');
-    } catch (err) {
-      setError('Something went wrong. Please try again or chat with us on WhatsApp.');
-    } finally {
+    }  catch (err) {
+        console.error(err);
+        setError('Something went wrong. Please try again or chat with us on WhatsApp.');
+      }finally {
       setIsSubmitting(false);
     }
   };
@@ -58,8 +78,27 @@ export default function Contact() {
           <div className="bg-white p-12 rounded-3xl shadow-xl">
             <CheckCircle className="w-16 h-16 text-emerald-600 mx-auto mb-6" />
             <h3 className="text-3xl font-bold text-slate-900 mb-4">Message Sent!</h3>
-            <p className="text-slate-600 mb-8">We've received your details. We've also opened WhatsApp so you can chat with our team immediately.</p>
-            <button onClick={() => setIsSuccess(false)} className="text-emerald-600 font-semibold hover:underline">Submit another inquiry</button>
+                <p className="text-slate-600 mb-6">
+                  We've received your details. Our team will review them and get back to you shortly.
+                </p>
+
+                <div className="bg-emerald-50 border border-emerald-100 rounded-2xl p-6 mb-8">
+                  <p className="text-sm text-slate-700 mb-4 font-medium">
+                    Want faster answers?
+                  </p>
+
+                  <a
+                    href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+                      `Hello, I'm ${formData.full_name}. I'm interested in ${formData.goal} for my ${formData.property_type} in ${formData.location}.`
+                    )}`}
+                    target="_blank"
+                    className="inline-flex items-center justify-center gap-2 bg-emerald-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-emerald-700 transition-all w-full"
+                  >
+                    <MessageCircle className="w-5 h-5" />
+                    Chat on WhatsApp
+                  </a>
+                </div>
+            <button onClick={() => setIsSuccess(false)} className="text-emerald-600 font-semibold hover:underline">Submit another Inquiry.</button>
           </div>
         </div>
       </section>
@@ -69,6 +108,15 @@ export default function Contact() {
   return (
     <section id="contact" className="py-24 bg-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="text-center mb-16">
+        <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+          Let’s Talk About Your Property
+        </h2>
+        <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+          No pressure. Just clear options and honest guidance.
+        </p>
+      </div>
+
         <div className="grid lg:grid-cols-2 gap-16">
 
           <div className="bg-white p-8 md:p-10 rounded-3xl shadow-lg border border-slate-100">
@@ -124,7 +172,7 @@ export default function Contact() {
                     <div>
             <h2 className="text-4xl font-bold text-slate-900 mb-6">Start Your Property Swap Journey</h2>
             <p className="text-lg text-slate-600 mb-8">
-              Share a bit about your property. We reply within 24 hours — we don’t sell your info.
+              Share a bit about your property. We reply within 24 hours.
             </p>
             
             <div className="space-y-6">

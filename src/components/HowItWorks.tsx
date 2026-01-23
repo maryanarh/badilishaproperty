@@ -61,51 +61,62 @@ export default function HowItWorks() {
         </div>
 
         {/* Cards */}
-        <div className="grid md:grid-cols-3 gap-8 group">
-          {steps.map((step, index) => (
-            <div
-              key={index}
-              className="relative transition-all duration-300 group-hover:opacity-60 hover:!opacity-100"
-            >
-              <div className="relative h-full rounded-3xl p-8 bg-gradient-to-br from-emerald-800/60 to-emerald-700/40 backdrop-blur-xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                {/* Big number */}
-                <span className="absolute right-6 top-4 text-6xl font-bold text-emerald-300/10">
-                  {step.number}
-                </span>
+<div className="grid gap-6 md:grid-cols-3 md:gap-8 group">
+  {steps.map((step, index) => (
+    <div
+      key={index}
+      className="relative transition-all duration-300 md:group-hover:opacity-60 md:hover:!opacity-100"
+    >
+      <div className="relative h-full overflow-hidden rounded-3xl bg-gradient-to-br from-emerald-800/70 via-emerald-800/50 to-emerald-700/40 p-6 md:p-8 backdrop-blur-xl shadow-xl transition-all duration-300 md:hover:-translate-y-2 md:hover:shadow-2xl">
 
-                {/* Icon */}
-                <div className="mb-6 w-fit rounded-xl bg-gradient-to-br from-emerald-400/20 to-emerald-300/10 p-4">
-                  <step.icon className="w-8 h-8 text-emerald-300" />
-                </div>
+        {/* Left accent rail */}
+        <span className="absolute left-0 top-0 h-full w-1.5 bg-gradient-to-b from-emerald-400/60 via-emerald-300/30 to-transparent rounded-l-3xl" />
 
-                {/* Content */}
-                <h3 className="text-xl md:text-2xl font-semibold text-white mb-3">
-                  {step.title}
-                </h3>
-                <p className="text-emerald-100/80 mb-6">
-                  {step.description}
-                </p>
+        {/* Oversized icon watermark (fills right-side space) */}
+        <step.icon className="pointer-events-none absolute -right-6 top-1/2 h-40 w-40 -translate-y-1/2 text-emerald-300/5" />
 
-                <ul className="space-y-3">
-                  {step.details.map((detail, idx) => (
-                    <li key={idx} className="flex items-start space-x-2">
-                      <ArrowRight className="w-5 h-5 text-emerald-300 flex-shrink-0 mt-0.5" />
-                      <span className="text-sm text-emerald-100/70">
-                        {detail}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+        {/* Big step number */}
+        <span className="absolute right-6 top-4 text-6xl font-bold text-emerald-300/10">
+          {step.number}
+        </span>
 
-              {index < steps.length - 1 && (
-                <div className="hidden md:block absolute top-1/2 -right-5 -translate-y-1/2 z-10">
-                  <ArrowRight className="w-8 h-8 text-emerald-400/40" />
-                </div>
-              )}
-            </div>
-          ))}
+        {/* Icon */}
+        <div className="relative mb-5 w-fit rounded-xl bg-gradient-to-br from-emerald-400/25 to-emerald-300/10 p-3">
+          <step.icon className="h-7 w-7 text-emerald-300" />
         </div>
+
+        {/* Content */}
+        <h3 className="relative mb-2 text-lg font-semibold text-white md:text-2xl">
+          {step.title}
+        </h3>
+
+        <p className="relative mb-5 text-sm text-emerald-100/80 md:text-base">
+          {step.description}
+        </p>
+
+        {/* Details */}
+        <ul className="relative space-y-3">
+          {step.details.map((detail, idx) => (
+            <li key={idx} className="flex items-start gap-2">
+              <ArrowRight className="mt-0.5 h-4 w-4 flex-shrink-0 text-emerald-300" />
+              <span className="text-sm text-emerald-100/70">
+                {detail}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* Connector arrow (desktop only) */}
+      {index < steps.length - 1 && (
+        <div className="absolute top-1/2 -right-5 z-10 hidden -translate-y-1/2 md:block">
+          <ArrowRight className="h-8 w-8 text-emerald-400/40" />
+        </div>
+      )}
+    </div>
+  ))}
+</div>
+
       </div>
     </section>
   );

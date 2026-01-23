@@ -17,17 +17,17 @@ export default function Services() {
     {
       icon: RefreshCw,
       title: 'Property Trade-In (Swap)',
-      benefit: 'Move directly into your next home without selling.',
+      benefit: 'Enables direct exchange between property owners who want a different asset rather than a cash exit',
       bullets: [
-        'Trade directly with a matched owner',
-        'Clear top-up or payout',
-        'We manage the paperwork'
+        'i). Trade directly with a matched owner',
+        'ii). Clear top-up or payout',
+        'iii). We manage the paperwork'
       ],
       type: 'swap',
       images: [
-        'https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&w=800&q=80',
-        'https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=800&q=80'
-      ],
+        '/Apartment.webp',
+        '/Bungalow.webp'
+    ],
       alt: 'Property swapping illustration with two distinct homes',
       iconColor: 'text-emerald-600',
       bgColor: 'bg-emerald-100'
@@ -35,16 +35,16 @@ export default function Services() {
     {
       icon: Banknote,
       title: 'Property Sale',
-      benefit: 'Want cash instead? We\'ll help you sell fast and fair.',
+      benefit: 'Provides a controlled, transparent exit for owners who need liquidity without prolonged market exposure.',
       bullets: [
-        'Market listing help',
-        'Transparent fees',
-        'Fast settlement options'
+        'i). Market listing help',
+        'ii). Transparent fees',
+        'iii). Fast settlement options'
       ],
       type: 'sale',
       images: [
-        'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80',
-        'https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&w=800&q=80'
+          '/house.webp',
+          '/sale.jpg'
       ],
       alt: 'Property sale process showing listing and completion',
       iconColor: 'text-blue-600',
@@ -55,14 +55,14 @@ export default function Services() {
       title: 'Subdivision & Registration',
       benefit: 'Split land, register titles, unlock value.',
       bullets: [
-        'Legal registration',
-        'Subdivision planning',
-        'Title transfer support'
+        'i). Legal registration',
+        'ii). Subdivision planning',
+        'iii). Title transfer support'
       ],
       type: 'subdivision',
       images: [
-        'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80',
-        'https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=800&q=80'
+        '/before_division.webp',
+        '/Division.webp'
       ],
       alt: 'Land subdivision and registration documents',
       iconColor: 'text-amber-600',
@@ -110,7 +110,7 @@ export default function Services() {
   };
 
   return (
-    <section id="services" className="py-24 bg-white">
+    <section id="services" className="py-10 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-slate-900 mb-4">Our Core Services</h2>

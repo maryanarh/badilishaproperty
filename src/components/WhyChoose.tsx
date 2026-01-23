@@ -13,29 +13,29 @@ export default function WhyChoose() {
       icon: Clock,
       title: "No Need to Sell First",
       description:
-        "Avoid the risky process of selling, waiting, and then buying. With Badilisha, you simply trade in and settle the difference.",
+        "Move forward without selling, waiting, then buying again. Trade in and settle only the difference, with timing handled upfront.",
       stat: "2-4 weeks faster",
     },
     {
       icon: DollarSign,
       title: "Cost Savings",
       description:
-        "Avoid multiple agent fees, dual mortgages, bridging loans that drain your resources and prolonged vacancy periods associated with traditional selling.",
+        "Avoid multiple agent fees, dual mortgages, and bridging loans. Capital is preserved instead of drained by process inefficiencies",
       stat: "Save thousands",
     },
     {
       icon: Shield,
       title: "Fair Valuations",
       description:
-        "Independent professional assessments ensure both parties get a transparent, equitable deal.",
+        "Certified valuations anchor every decision. No emotional pricing, no speculative gaps, just aligned expectations.",
       stat: "100% transparent",
     },
     {
       icon: SlidersHorizontal,
       title: "Economic Flexibility",
       description:
-        "Designed for economic realities where flexibility matters more than traditional real estate timelines.",
-      stat: "Adulting, but on easy mode",
+        "Cash balances are designed with purpose, not pressure. Subdivision is used strategically without forcing full exits.",
+      stat: "Built for real life",
     },
     {
       icon: Sparkles,
@@ -48,7 +48,7 @@ export default function WhyChoose() {
       icon: CheckCircle,
       title: "End-to-End Support",
       description:
-        "From valuation to moving day, we handle the legal, financial, and administrative complexities.",
+        "From valuation to moving day, we handle the legal, financial, and administrative complexities with you.",
       stat: "Full guidance",
     },
   ];
@@ -70,13 +70,13 @@ export default function WhyChoose() {
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Why Choose Badilisha
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-black-600 max-w-3xl mx-auto">
             We're not just another real estate company. We're building a smarter,
             fairer way to move forward.
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {benefits.map((benefit, index) => (
             <div key={index} className="group">
               <div className="bg-gradient-to-br from-gray-50 to-emerald-50/70 rounded-2xl p-8 h-full hover:shadow-xl transition-all border border-gray-100">
@@ -89,10 +89,10 @@ export default function WhyChoose() {
                   </span>
                 </div>
 
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                <h3 className="text-2xl font-bold text-gray-900 mb-3">
                   {benefit.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-lg text-black-600 leading-relaxed">
                   {benefit.description}
                 </p>
               </div>

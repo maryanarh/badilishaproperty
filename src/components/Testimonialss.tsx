@@ -1,54 +1,64 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
-import { Quote, Star, ArrowLeft, ArrowRight } from 'lucide-react';
+import { Quote, Star, ArrowLeft, ArrowRight, User } from 'lucide-react';
 
 const testimonials = [
   {
     name: "Jane Wambui",
     service: "Property Trade-In",
     location: "Nairobi",
-    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face",
+    avatar: User,
     rating: 5,
-    text: "The property swap process was incredibly smooth. I moved from my large family home in Karen to a beautiful apartment without the stress of selling first. Badilisha handled everything.",
-    results: ["300% efficiency increase", "$2M cost savings", "24/7 automation"]
+    text: "We moved into our new home without selling first — no pressure, no chaos. Badilisha structured the swap from valuation to handover, handled the legal coordination, and aligned both timelines so nothing stalled. What stood out most was the calm confidence of the process; every step was explained, priced fairly, and executed exactly as agreed.",
+    results: ["Zero selling stress", "All paperwork handled", "Weeks saved"]
+  },
+  {
+    name: "John & Lisa",
+    service: "Property Trade-In",
+    location: "Kilimani",
+    avatar: User,
+    rating: 5,
+    text: "Instead of waiting months to sell, we moved straight into the right home for our family. Badilisha matched us with a compatible property, balanced the values transparently, and coordinated the transfer so we never felt exposed. The swap model was practical, structured, and delivered exactly what we needed at that stage of life.",
+    results: ["Immediate move-in", "Seamless transition", "Strong value exchange"]
   },
   {
     name: "David Omondi",
     service: "Property Sale",
     location: "Mombasa",
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
+    avatar: User,
     rating: 5,
-    text: "I needed to sell my land quickly to invest in a new venture. Badilisha found a buyer within weeks and the transparent fee structure was a breath of fresh air.",
-    results: ["40% satisfaction boost", "Instant responses", "Seamless integration"]
+    text: "We needed liquidity fast without being taken advantage of. Badilisha priced the property realistically, screened buyers properly, and handled negotiations with transparency. The sale closed quickly, the numbers made sense, and there were no surprises at settlement.",
+    results: ["Fast buyer match", "Transparent pricing", "Quick settlement"]
+  },
+  {
+    name: "Aisha Noor",
+    service: "Property Trade-In",
+    location: "Westlands",
+    avatar: User,
+    rating: 5,
+    text: "The idea of swapping homes sounded risky until we experienced it. Badilisha broke the process down clearly, verified every detail, and managed the exchange as one coordinated transaction. Instead of stress, we felt guided and protected throughout.",
+    results: ["Guided process", "Risk reduced", "Confidence restored"]
   },
   {
     name: "Sarah & Michael",
     service: "Subdivision",
     location: "Nakuru",
-    avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face",
+    avatar: User,
     rating: 5,
-    text: "Subdividing our family land felt like an impossible task until we found Badilisha. They managed the legal paperwork and registration perfectly. Highly recommended!",
-    results: ["Full automation", "Strategic focus", "Team productivity"]
+    text: "What felt like a legal maze became a clear, guided process. Badilisha assessed the land, advised on the best subdivision approach, and managed surveys, approvals, and registration without delays. We ended up with clean titles and a clear plan for how to use the land going forward.",
+    results: ["Clear legal process", "Faster approvals", "Land value unlocked"]
   },
   {
-    name: "David Kim",
-    service: "Property sale",
-    location: "BuruBuru",
-    avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
+    name: "Kelvin Mwangi",
+    service: "Subdivision",
+    location: "Thika",
+    avatar: User,
     rating: 5,
-    text: "The custom AI systems delivered results beyond our expectations. Revenue increased 150% while operational overhead decreased significantly.",
-    results: ["150% revenue growth", "Reduced overhead", "Scalable systems"]
-  },
-  {
-    name: "John & Lisa",
-    service: "Property Trade In",
-    location: "Kilimani",
-    avatar: "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=150&h=150&fit=crop&crop=face",
-    rating: 5,
-    text: "Exceptional AI solutions that actually work. The implementation was smooth, and the results were immediate. Best investment we've made.",
-    results: ["Immediate results", "Smooth integration", "High ROI"]
+    text: "Badilisha helped us unlock value we didn’t even know we had. They advised on how much land to release, coordinated registration, and ensured the titles were clean and transferable. The outcome wasn’t just higher value — it was clarity and long-term flexibility.",
+    results: ["Strategic planning", "On-time delivery", "Higher land value"]
   }
 ];
+
 
 export function PremiumTestimonials() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -67,22 +77,17 @@ export function PremiumTestimonials() {
     enter: (direction: number) => ({
       x: direction > 0 ? 1000 : -1000,
       opacity: 0,
-      scale: 0.8,
-      rotateY: direction > 0 ? 45 : -45
+      scale: 0.9
     }),
     center: {
-      zIndex: 1,
       x: 0,
       opacity: 1,
-      scale: 1,
-      rotateY: 0
+      scale: 1
     },
     exit: (direction: number) => ({
-      zIndex: 0,
       x: direction < 0 ? 1000 : -1000,
       opacity: 0,
-      scale: 0.8,
-      rotateY: direction < 0 ? 45 : -45
+      scale: 0.9
     })
   };
 
@@ -96,15 +101,22 @@ export function PremiumTestimonials() {
     setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
   };
 
+  const AvatarIcon = testimonials[currentIndex].avatar;
+
   return (
-    
-    <section id="testimonials" className="relative py-16 md:py-24 bg-white text-gray-900 overflow-hidden">
-        
+    <section id="testimonials" className="relative py-16 md:py-24 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Main Testimonial Display */}
-        <div className="relative max-w-6xl mx-auto mb-12 md:mb-16">
-          {/* Increased height by 10px values: 500→510, 400→410 */}
-          <div className="relative min-h-[610px] md:min-h-[410px] lg:h-[410px] perspective-1000">
+        <div className="text-center mb-14">
+        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          Real Stories. Real Moves.
+        </h2>
+        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          How homeowners used Badilisha to move forward with confidence.
+        </p>
+      </div>
+
+        <div className="relative max-w-5xl mx-auto">
+          <div className="relative min-h-[750px] sm:min-h-[440px]">
             <AnimatePresence initial={false} custom={direction}>
               <motion.div
                 key={currentIndex}
@@ -114,167 +126,88 @@ export function PremiumTestimonials() {
                 animate="center"
                 exit="exit"
                 transition={{
-                  x: { type: "spring", stiffness: 300, damping: 30 },
+                  x: { type: "spring", stiffness: 260, damping: 30 },
                   opacity: { duration: 0.4 },
-                  scale: { duration: 0.4 },
-                  rotateY: { duration: 0.6 }
+                  scale: { duration: 0.4 }
                 }}
                 className="absolute inset-0"
               >
-                <div className="relative h-full bg-white shadow-2xl rounded-3xl border border-gray-200 p-6 md:p-8 lg:p-12 overflow-hidden group hover:shadow-3xl transition-shadow duration-300">
-                  {/* Quote icon */}
-                  <motion.div
-                    className="absolute top-6 right-6 md:top-8 md:right-8 opacity-10"
-                    animate={{ rotate: [0, 10, 0] }}
-                    transition={{ duration: 4, repeat: Infinity }}
-                  >
-                    <Quote className="w-12 h-12 md:w-16 md:h-16 text-green-600" />
-                  </motion.div>
+                <div className="relative h-full bg-white shadow-xl rounded-3xl border border-gray-200 px-6 py-10 md:px-12">
 
-                  <div className="relative z-10 h-full flex flex-col lg:flex-row items-center gap-6 md:gap-8">
-                    {/* User Info */}
-                    <div className="flex-shrink-0 w-full lg:w-auto text-center lg:text-left">
-                      <motion.div
-                        className="relative mb-4 md:mb-6"
-                        whileHover={{ scale: 1.05 }}
-                        transition={{ duration: 0.3 }}
-                      >
-                        <div className="w-20 h-20 md:w-24 md:h-24 mx-auto lg:mx-0 rounded-full overflow-hidden border-4 border-green-100 relative">
-                          <img 
-                            src={testimonials[currentIndex].avatar} 
-                            alt={testimonials[currentIndex].name}
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
-                      </motion.div>
+                  <Quote className="absolute top-6 left-6 w-10 h-10 text-green-200" />
+                  <Quote className="absolute bottom-6 right-6 w-10 h-10 text-green-200 rotate-180" />
 
-                      <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-1">
+                  <div className="relative z-10 flex flex-col items-center text-center gap-6">
+
+                    <div className="flex flex-col items-center">
+                      <div className="w-20 h-20 rounded-full bg-green-100 flex items-center justify-center border-4 border-green-200 mb-3">
+                        <AvatarIcon className="w-9 h-9 text-green-600" />
+                      </div>
+
+                      <h3 className="text-xl font-bold">
                         {testimonials[currentIndex].name}
                       </h3>
-                      <p className="text-green-600 mb-1 font-medium text-sm md:text-base">
+                      <p className="text-green-600 font-medium text-sm">
                         {testimonials[currentIndex].service}
                       </p>
-                      <p className="text-gray-500 mb-3 md:mb-4 text-sm">
+                      <p className="text-gray-500 text-xs mb-2">
                         {testimonials[currentIndex].location}
                       </p>
-                      
-                      {/* Star Rating */}
-                      <div className="flex justify-center lg:justify-start gap-1 mb-4 md:mb-6">
+
+                      <div className="flex gap-1">
                         {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
-                          <motion.div
+                          <Star
                             key={i}
-                            initial={{ opacity: 0, scale: 0 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            transition={{ delay: i * 0.1, duration: 0.3 }}
-                          >
-                            <Star className="w-4 h-4 md:w-5 md:h-5 fill-yellow-400 text-orange-400" />
-                          </motion.div>
+                            className="w-4 h-4 fill-yellow-400 text-orange-400"
+                          />
                         ))}
                       </div>
                     </div>
 
-                    {/* Content - Increased width for mobile */}
-                    <div className="flex-1 w-full lg:w-auto">
-                      <motion.blockquote 
-                        className="text-lg md:text-xl lg:text-2xl text-gray-800 leading-relaxed mb-4 md:mb-6 md:mb-8 font-medium italic"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: 0.3, duration: 0.8 }}
-                      >
-                        "{testimonials[currentIndex].text}"
-                      </motion.blockquote>
+                    <blockquote className="max-w-3xl text-lg italic text-gray-700">
+                      “{testimonials[currentIndex].text}”
+                    </blockquote>
 
-                      {/* Results - Adjusted for mobile */}
-                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
-                        {testimonials[currentIndex].results.map((result, i) => (
-                          <motion.div
-                            key={i}
-                            className="bg-green-50 rounded-lg p-3 border border-green-100"
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.5 + i * 0.1, duration: 0.5 }}
-                            whileHover={{ backgroundColor: "#dbeafe" }}
-                          >
-                            <span className="text-sm md:text-base text-green-800 font-medium">
-                              {result}
-                            </span>
-                          </motion.div>
-                        ))}
-                      </div>
+                    {/* ✅ RESPONSIVE RESULTS LAYOUT */}
+                    <div
+                      className="
+                        flex gap-3 justify-center
+                        flex-wrap
+                        max-w-md
+                        lg:max-w-none
+                        lg:flex-nowrap
+                      "
+                    >
+                      {testimonials[currentIndex].results.map((result, i) => (
+                        <div
+                          key={i}
+                          className="bg-green-50 border border-green-100 rounded-full px-4 py-2 text-sm text-green-800 font-medium whitespace-nowrap"
+                        >
+                          {result}
+                        </div>
+                      ))}
                     </div>
+
                   </div>
                 </div>
               </motion.div>
             </AnimatePresence>
           </div>
 
-          {/* Navigation Controls */}
-          <div className="flex justify-center items-center gap-4 md:gap-6 mt-8">
-            <motion.button
-              onClick={prevTestimonial}
-              className="p-3 rounded-full bg-green-50 border border-green-200 text-green-600 hover:bg-green-100 transition-all"
-              whileHover={{ scale: 1.1, backgroundColor: "#dbeafe" }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <ArrowLeft className="w-5 h-5" />
-            </motion.button>
+          <button
+            onClick={prevTestimonial}
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 p-3 rounded-full bg-white border shadow"
+          >
+            <ArrowLeft />
+          </button>
 
-            {/* Dots Indicator */}
-            <div className="flex gap-2 md:gap-3">
-              {testimonials.map((_, index) => (
-                <motion.button
-                  key={index}
-                  onClick={() => {
-                    setDirection(index > currentIndex ? 1 : -1);
-                    setCurrentIndex(index);
-                  }}
-                  className={`w-3 h-3 rounded-full transition-all ${
-                    index === currentIndex 
-                      ? 'bg-green-600 scale-125' 
-                      : 'bg-green-200 hover:bg-green-300'
-                  }`}
-                  whileHover={{ scale: 1.2 }}
-                  whileTap={{ scale: 0.9 }}
-                />
-              ))}
-            </div>
+          <button
+            onClick={nextTestimonial}
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 p-3 rounded-full bg-white border shadow"
+          >
+            <ArrowRight />
+          </button>
 
-            <motion.button
-              onClick={nextTestimonial}
-              className="p-3 rounded-full bg-green-50 border border-green-200 text-green-600 hover:bg-green-100 transition-all"
-              whileHover={{ scale: 1.1, backgroundColor: "#dbeafe" }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <ArrowRight className="w-5 h-5" />
-            </motion.button>
-          </div>
-        </div>
-
-        {/* Stats Section */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
-          {[
-            { number: "200+", label: "Happy Clients" },
-            { number: "98%", label: "Satisfaction Rate" },
-            { number: "Ksh2M+", label: "Cost Savings" },
-            { number: "50%+", label: "Time saved" }
-          ].map((stat, index) => (
-            <motion.div
-              key={index}
-              className="text-center group p-4 md:p-6 bg-gradient-to-br from-green-50 to-white rounded-xl border border-green-100"
-              whileHover={{ scale: 1.03, boxShadow: "0 10px 25px -5px rgba(59, 130, 246, 0.1)" }}
-            >
-              <motion.div
-                className="text-2xl md:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-green-600 to-green-800 bg-clip-text text-transparent mb-2"
-                animate={{ opacity: [0.8, 1, 0.8] }}
-                transition={{ duration: 2, repeat: Infinity, delay: index * 0.5 }}
-              >
-                {stat.number}
-              </motion.div>
-              <div className="text-gray-600 text-sm md:text-base font-medium group-hover:text-gray-900 transition-colors">
-                {stat.label}
-              </div>
-            </motion.div>
-          ))}
         </div>
       </div>
     </section>

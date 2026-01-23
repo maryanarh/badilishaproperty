@@ -2,14 +2,13 @@ import Navigation from './components/Navigation';
 import Hero from './components/Hero';
 import About from './components/About';
 import Scenarios from './components/Scenarios';
-import FAQ from './components/FAQ';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import HowItWorks from './components/HowItWorks';
 import WhyChoose from './components/WhyChoose';
 import Services from './components/Services';
 import { PremiumTestimonials } from './components/Testimonialss';
 import ScrollProgressIndicator from "./components/ScrollProgressIndicator"
+import { ServiceDropdowns } from './components/ServiceDropdowns';
 
 
 function App() {
@@ -20,7 +19,7 @@ function App() {
       <Hero />
       <About/>
       <Services />
-      <HowItWorks/>
+      <ServiceDropdowns />
       <Scenarios />
       <WhyChoose />
       <PremiumTestimonials />
