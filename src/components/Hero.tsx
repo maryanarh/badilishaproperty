@@ -14,12 +14,11 @@ export default function Hero() {
     }
   }
 
-  const openWhatsApp = () => {
-    window.open(
-      "https://wa.me/254700000000?text=Hello%20I%20am%20interested%20in%20a%20property%20swap",
-      "_blank"
-    )
-  }
+    const openContact = () => {
+      const section = document.getElementById("contact");
+      section?.scrollIntoView({ behavior: "smooth" });
+    };
+
 
   return (
     <section
@@ -77,14 +76,20 @@ export default function Hero() {
                 <span>Find Your Next Position</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
+                <button
+                  onClick={openContact}
+                  className="flex items-center justify-center gap-2 
+                            bg-white/80 backdrop-blur-md 
+                            text-emerald-700 
+                            px-7 py-3.5 rounded-xl font-semibold 
+                            border border-white/40 
+                            hover:bg-emerald-50 hover:text-emerald-800 hover:border-emerald-200
+                            transition-all duration-300"
+                >
+                  <MessageCircle className="w-5 h-5" />
+                  <span>Talk to Us</span>
+                </button>
 
-              <button
-                onClick={openWhatsApp}
-                className="flex items-center justify-center gap-2 bg-white/80 backdrop-blur-md text-emerald-700 px-7 py-3.5 rounded-xl font-semibold border border-white/40 hover:bg-white transition-all"
-              >
-                <MessageCircle className="w-5 h-5" />
-                <span>Talk to Us</span>
-              </button>
             </div>
           </div>
 
