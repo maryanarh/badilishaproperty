@@ -14,61 +14,61 @@ export default function Services() {
     iconColor: string;
     bgColor: string;
   }[] = [
-    {
-      icon: RefreshCw,
-      title: 'Property Trade-In (Swap)',
-      benefit: 'Enables direct exchange between property owners who want a different asset rather than a cash exit',
-      bullets: [
-        'i). Trade directly with a matched owner',
-        'ii). Clear top-up or payout',
-        'iii). We manage the paperwork'
-      ],
-      type: 'swap',
-      images: [
-        '/Apartment.webp',
-        '/Bungalow.webp'
+  {
+    icon: RefreshCw,
+    title: 'Property Trade-In (Swap)',
+    benefit: 'Enables direct exchange between property owners who want a different asset rather than a cash exit',
+    bullets: [
+      '• Direct trade with a matched property owner',
+      '• Clear top-up or payout where values differ',
+      '• Full paperwork and process handled by us'
     ],
-      alt: 'Property swapping illustration with two distinct homes',
-      iconColor: 'text-emerald-600',
-      bgColor: 'bg-emerald-100'
-    },
-    {
-      icon: Banknote,
-      title: 'Property Sale',
-      benefit: 'Provides a controlled, transparent exit for owners who need liquidity without prolonged market exposure.',
-      bullets: [
-        'i). Market listing help',
-        'ii). Transparent fees',
-        'iii). Fast settlement options'
-      ],
-      type: 'sale',
-      images: [
-          '/house.webp',
-          '/sale.jpg'
-      ],
-      alt: 'Property sale process showing listing and completion',
-      iconColor: 'text-blue-600',
-      bgColor: 'bg-blue-100'
-    },
-    {
-      icon: Award,
-      title: 'Subdivision & Registration',
-      benefit: 'Split land, register titles, unlock value.',
-      bullets: [
-        'i). Legal registration',
-        'ii). Subdivision planning',
-        'iii). Title transfer support'
-      ],
-      type: 'subdivision',
-      images: [
-        '/before_division.webp',
-        '/Division.webp'
-      ],
-      alt: 'Land subdivision and registration documents',
-      iconColor: 'text-amber-600',
-      bgColor: 'bg-amber-100'
-    }
-  ];
+    type: 'swap',
+    images: [
+      '/Apartment.webp',
+      '/Bungalow.webp'
+    ],
+    alt: 'Property swapping illustration with two distinct homes',
+    iconColor: 'text-emerald-600',
+    bgColor: 'bg-emerald-100'
+  },
+  {
+    icon: Banknote,
+    title: 'Property Sale',
+    benefit: 'Provides a controlled, transparent exit for owners who need liquidity without prolonged market exposure.',
+    bullets: [
+      '• Assisted market listing and pricing',
+      '• Transparent and predictable fees',
+      '• Faster settlement options available'
+    ],
+    type: 'sale',
+    images: [
+      '/house.webp',
+      '/sale.jpg'
+    ],
+    alt: 'Property sale process showing listing and completion',
+    iconColor: 'text-blue-600',
+    bgColor: 'bg-blue-100'
+  },
+  {
+    icon: Award,
+    title: 'Subdivision & Registration',
+    benefit: 'Split land, register titles, unlock value.',
+    bullets: [
+      '• Legal subdivision and approvals',
+      '• Proper planning and land division',
+      '• Title registration and transfer support'
+    ],
+    type: 'subdivision',
+    images: [
+      '/before_division.webp',
+      '/Division.webp'
+    ],
+    alt: 'Land subdivision and registration documents',
+    iconColor: 'text-amber-600',
+    bgColor: 'bg-amber-100'
+  }
+];
 
   const getServiceIcon = (type: ServiceType) => {
     switch(type) {

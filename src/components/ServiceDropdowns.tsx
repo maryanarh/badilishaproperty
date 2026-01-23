@@ -197,7 +197,9 @@ export function ServiceDropdowns() {
             {isServiceOpen && (
               <div className="px-5 pb-8 space-y-3">
                 {service.subcategories.map((sub) => {
-                  const isOpen = openSub === sub.title
+                  const subKey = `${service.id}-${sub.title}`
+                  const isOpen = openSub === subKey
+
                   return (
                     <div
                       key={sub.title}
@@ -206,8 +208,8 @@ export function ServiceDropdowns() {
                       }`}
                     >
                       <button
-                        onClick={() => setOpenSub(isOpen ? null : sub.title)}
-                        className={`w-full flex justify-between items-center p-4 text-left ${isOpen ? 'pb-2' : 'pb-4'}`}
+                        onClick={() => setOpenSub(isOpen ? null : subKey)}
+                        className={`w-full flex justify-between items-center p-4 text-left ${isOpen ? "pb-2" : "pb-4"}`}
                       >
                         <span className={`font-medium transition-colors duration-200 ${isOpen ? getActiveText(service.theme) : "text-neutral-600"}`}>
                           {sub.title}

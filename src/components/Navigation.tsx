@@ -24,7 +24,6 @@ export default function Navigation() {
         top: offsetPosition,
         behavior: 'smooth'
       });
-      
       // Close mobile menu after navigation
       setIsMobileMenuOpen(false);
     }
@@ -33,7 +32,6 @@ export default function Navigation() {
   const navLinks = [
     { label: 'About', id: 'about' },
     { label: 'Services', id: 'services' },
-    { label: 'How It Works', id: 'how-it-works' },
     { label: 'Why Choose Us', id: 'why-choose' },
     { label: 'Contact', id: 'contact' },
   ];
