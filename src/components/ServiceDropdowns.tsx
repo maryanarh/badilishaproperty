@@ -25,38 +25,38 @@ const services: ServiceDropdown[] = [
     theme: "emerald",
     icon: <RefreshCw className="h-5 w-5 text-emerald-600" />,
     iconBg: "bg-emerald-100",
-    title: "Property Trade-In (Swap)",
+    title: "Property Trade-In",
     subtitle: "Swap one property for another",
     subcategories: [
       {
-        title: "Direct Property Swaps",
+        title: "Direct Property Swap",
         description:
-          "Badilisha enables structured property-to-property exchanges without forcing you to sell first. This allows owners to move into a better-fitting property while keeping value locked in real estate. It is ideal for upgrades, downsizing, or location changes without market pressure.",
+          "We help property owners exchange properties without needing to sell first. This makes it easier to upgrade, downsize, or change locations while keeping your value in property instead of rushing into cash sales.",
       },
       {
         title: "Fair Property Valuation",
         description:
-          "Every property involved is independently valued using current market data. This creates a neutral reference point so no party feels disadvantaged. Fair valuation is the foundation that makes swaps sustainable and trusted.",
+          "Each property is valued using current market data by independent professionals. This keeps the exchange fair for everyone involved and removes guesswork from the process.",
       },
       {
         title: "Lifestyle & Location Matching",
         description:
-          "We match owners based on where they are in life, not just numbers. Location needs, family size, accessibility, and future plans are all considered. This ensures swaps solve real problems, not just financial ones.",
+          "We match people based on real life needs, not just numbers. Family size, location preferences, access needs, and future plans are all taken into account so the swap actually makes sense.",
       },
       {
-        title: "Cash Top-Ups Where Needed",
+        title: "Cash Top-Ups When Needed",
         description:
-          "When property values don’t align perfectly, we structure clear cash top-ups or payouts. These adjustments are agreed upfront and documented transparently. No surprises, no last-minute renegotiations.",
+          "If property values don’t match exactly, we clearly structure cash top-ups or payouts. Everything is agreed upfront and written down, so there are no surprises later.",
       },
       {
-        title: "Coordinated Timelines",
+        title: "Coordinated Move Timelines",
         description:
-          "All parties move on a synchronized timeline to avoid risk and uncertainty. This prevents situations where one owner relocates while another delays. Everyone transitions together, safely and predictably.",
+          "All owners move on a shared timeline. This avoids delays, uncertainty, or one party being left waiting while another moves ahead.",
       },
       {
         title: "Legal & Ownership Transfer",
         description:
-          "Badilisha manages due diligence, agreements, and title transfers end to end. Legal steps are coordinated centrally to reduce errors and delays. Owners can focus on moving forward, not paperwork.",
+          "We handle due diligence, agreements, and title transfers from start to finish. The legal work is managed centrally so owners can focus on moving forward, not paperwork.",
       },
     ],
   },
@@ -66,37 +66,37 @@ const services: ServiceDropdown[] = [
     icon: <Banknote className="h-5 w-5 text-blue-600" />,
     iconBg: "bg-blue-100",
     title: "Property Sale",
-    subtitle: "Sell with clarity and control",
+    subtitle: "Sell clearly and confidently",
     subcategories: [
       {
         title: "Realistic Pricing",
         description:
-          "We guide pricing based on actual market value, not speculation or pressure. This protects owners from underpricing while avoiding listings that stall. The goal is a clean exit, not a hopeful gamble.",
+          "We help set prices based on real market value, not pressure or guesswork. This avoids underpricing while also preventing listings that sit for too long.",
       },
       {
         title: "Buyer Screening",
         description:
-          "Only credible and financially capable buyers are introduced. This reduces failed transactions and wasted time. Serious buyers create faster and more reliable outcomes.",
+          "Only serious and financially ready buyers are introduced. This reduces failed deals and saves time for everyone involved.",
       },
       {
         title: "Faster Buyer Matching",
         description:
-          "Badilisha prioritizes buyers who are ready to proceed. This is especially useful when liquidity is time-sensitive. Speed is achieved through preparation, not shortcuts.",
+          "We prioritize buyers who are ready to move forward. This helps speed up sales when timing matters, without cutting corners.",
       },
       {
         title: "Clear Fees & Costs",
         description:
-          "All fees and settlement costs are disclosed before any commitment. There are no hidden charges introduced at closing. Transparency builds trust and protects decision-making.",
+          "All fees and costs are explained before you commit. There are no hidden charges added at the end of the process.",
       },
       {
-        title: "Sell vs Swap Guidance",
+        title: "Sell vs Trade-In Advice",
         description:
-          "We help owners decide whether selling or trading in is the better option. This guidance comes before listing, not after. The right path depends on goals, not assumptions.",
+          "We help you decide whether selling or trading in is the better option before anything is listed. The right choice depends on your goals, not assumptions.",
       },
       {
         title: "End-to-End Sale Handling",
         description:
-          "From offer acceptance to title transfer, the sale is managed as one coordinated process. Legal execution, payments, and registration are handled cleanly. Owners exit with certainty and closure.",
+          "From accepting an offer to transferring the title, we manage the entire sale as one smooth process. Payments, legal steps, and registration are handled cleanly.",
       },
     ],
   },
@@ -111,32 +111,32 @@ const services: ServiceDropdown[] = [
       {
         title: "Land Feasibility Check",
         description:
-          "We assess whether subdivision makes sense financially and legally. This prevents over-fragmenting land and destroying long-term value. Decisions are based on strategy, not pressure.",
+          "We first confirm whether subdivision makes sense legally and financially. This prevents breaking land into pieces that reduce long-term value.",
       },
       {
         title: "Subdivision Planning",
         description:
-          "Professional surveyors and planners design subdivisions correctly from the start. Layouts align with regulations and future usability. This avoids costly revisions later.",
+          "Surveyors and planners design the subdivision correctly from the start. Layouts follow regulations and are practical for future use.",
       },
       {
         title: "County Approvals",
         description:
-          "Badilisha supports the process through county and regulatory approvals. Documentation, follow-ups, and compliance are handled systematically. Owners avoid administrative bottlenecks.",
+          "We support the process through county and regulatory approvals. Paperwork, follow-ups, and compliance are handled step by step.",
       },
       {
         title: "New Title Creation",
         description:
-          "Each subdivided portion receives a clean, legally registered title. Titles are created to be transferable and bankable. This protects future transactions and ownership clarity.",
+          "Each subdivided portion gets a clean, legally registered title. This makes future sales, transfers, or financing straightforward.",
       },
       {
         title: "Partial Land Release",
         description:
-          "Owners can unlock value from part of their land while retaining the rest. This balances immediate needs with long-term ownership. Capital is released without full disposal.",
+          "You can unlock value from part of your land while keeping the rest. This allows access to capital without giving up full ownership.",
       },
       {
         title: "Inheritance-Ready Structuring",
         description:
-          "Titles are structured to reduce future disputes among heirs. Clear boundaries and documentation protect families long after subdivision. This turns land into a stable legacy asset.",
+          "Titles are structured to reduce future family disputes. Clear boundaries and documentation help protect land as a long-term family asset.",
       },
     ],
   },

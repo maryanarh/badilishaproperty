@@ -87,7 +87,7 @@ export default function Scenarios() {
       step: "Match",
       title: "The Match",
       icon: Search,
-      text: "A growing family owns a two-bedroom apartment in Kilimani and needs more space but can’t risk selling first. Badilisha verifies both properties and structures a swap.",
+      text: "A growing family owns a two-bedroom apartment in Kilimani and needs more space but can’t risk selling first. Badilisha verifies both properties and structures a Trade-In.",
       details: [
         "Direct property-to-property match",
         "Verified property valuations",

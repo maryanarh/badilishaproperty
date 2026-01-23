@@ -9,7 +9,7 @@ export default function RealScenario() {
             A Real Badilisha Scenario
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            See how property swapping works in real life
+            See how property Trade-In works in real life
           </p>
         </div>
 

@@ -33,17 +33,17 @@ export default function About() {
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Redefining Property Transitions
             </h2>
-            <div className="space-y-4 text-xl text-gray-600">
+            <div className="space-y-4 text-xl text-gray-700">
               <p>
-                Badilisha Properties Limited exists to help people move forward in life without sacrificing the wealth they’ve already built.
-                We were founded on a simple insight: during major life transitions, selling property often leads to rushed decisions and
-                unnecessary loss of value. We do things differently.
+                Badilisha Properties Limited helps people move forward in life without losing the value they’ve worked so hard to build.
+                We started with a simple realization: when life changes, selling property often feels rushed, stressful, and costly.
+                Too many people walk away with less than they should. We believe there’s a better way 
               </p>
 
               <p>
-                Instead of treating property as something to offload, we see it as a store of value, one that can be transformed,
-                rebalanced, or restructured to meet changing needs. This philosophy shapes every step of our process, from valuation
-                to handover, ensuring outcomes that are financially sound, deliberate, and human.
+               We don’t see property as something you’re forced to sell under pressure. We see it as value you can adjust, trade,
+              or reshape to fit your next chapter. That mindset guides everything we do from how we value property to how we
+              hand it over so that decisions feel clear, fair, and made with people in mind.             
               </p>
             </div>
 
@@ -56,10 +56,8 @@ export default function About() {
             <h3 className="text-2xl font-bold">Our Mission</h3>
           </div>
           <p className="text-emerald-50 text-lg">
-            Our mission is to make property transitions simple, clear, and secure.
-            We help homeowners move to their next position through fair valuation,
-            smart matching, and end-to-end legal support—without forcing premature sales
-            or risking long-term wealth.
+           Our mission is to make property transitions straightforward and safe. We help homeowners move to what’s next through fair pricing,
+           smart property matching, and full legal support — without rushing sales or putting long-term value at risk.
           </p>
         </div>
 
@@ -68,10 +66,10 @@ export default function About() {
             <Eye className="w-8 h-8" />
             <h3 className="text-2xl font-bold">Our Vision</h3>
           </div>
-          <p className="text-gray-300 text-lg">
-            We envision a future where property transitions are predictable,
-            human-centered, and fair—where complexity is hidden behind clear processes
-            and ownership becomes a tool for opportunity, not a burden.
+          <p className="text-gray-200 text-lg">
+            We imagine a future where changing property is calm and predictable, not confusing or stressful.
+            A future where clear processes replace guesswork, and property ownership becomes a stepping stone to opportunity,
+            not a weight holding people back.
           </p>
         </div>
       </div>

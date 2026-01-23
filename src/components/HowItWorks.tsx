@@ -52,7 +52,7 @@ export default function HowItWorks() {
         {/* Header */}
         <div className="text-center mb-20">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            How Property Swapping Works
+            How Property Trade-In and Exchange Works
           </h2>
           <p className="text-lg md:text-xl text-emerald-100/80 max-w-3xl mx-auto">
             A simple, transparent three-step process that takes the stress out of

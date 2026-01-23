@@ -6,11 +6,11 @@ export default function FAQ() {
 
   const faqs = [
     {
-      question: 'Is property swapping legal in Kenya?',
+      question: 'Is property trade-In and exchange legal in Kenya?',
       answer: 'Yes. We document all transfers through lawful channels and handle registration to ensure every transition is secure and compliant with local laws.'
     },
     {
-      question: 'Do I need cash to top up a swap?',
+      question: 'Do I need cash to top up a trade-In?',
       answer: 'Sometimes. If the property you are moving into is valued higher than your current one, a top-up is needed. We show you all options up front so there are no surprises.'
     },
     {

@@ -5,7 +5,7 @@ export default function WhoItsFor() {
     {
       icon: Users,
       title: 'Growing Families',
-      description: 'Need more space but don\'t want the stress of selling first? Swap into a larger home that fits your expanding family.',
+      description: 'Need more space but don\'t want the stress of selling first? Trade-In or Exchange into a larger home that fits your expanding family.',
       benefit: 'Move before your family outgrows your current space',
     },
     {
@@ -17,25 +17,25 @@ export default function WhoItsFor() {
     {
       icon: MapPin,
       title: 'Relocating Professionals',
-      description: 'Moving for work or lifestyle? Swap your urban property for a rural retreat, or vice versa, with confidence and support.',
+      description: 'Moving for work or lifestyle? Trade-In or Exchange your urban property for a rural retreat, or vice versa, with confidence and support.',
       benefit: 'Relocate on your timeline, not the market\'s',
     },
     {
       icon: TrendingUp,
       title: 'Property Investors',
-      description: 'Looking to convert residential property into income-generating assets? We help you make strategic swaps that align with your investment goals.',
+      description: 'Looking to convert residential property into income-generating assets? We help you make strategic property Trade-In that align with your investment goals.',
       benefit: 'Optimize your portfolio without multiple transactions',
     },
     {
       icon: Heart,
       title: 'Lifestyle Changers',
-      description: 'Life circumstances change. Whether it\'s health, retirement, or a fresh start, swap into a property that supports your new chapter.',
+      description: 'Life circumstances change. Whether it\'s health, retirement, or a fresh start, Trade-In or Exchange your property as we support your new chapter.',
       benefit: 'Adapt your living situation to your evolving needs',
     },
     {
       icon: Briefcase,
       title: 'Estate & Inheritance',
-      description: 'Managing inherited property or estate transitions? We help families navigate property swaps with sensitivity and expertise.',
+      description: 'Managing inherited property or estate transitions? We help families navigate property Trade-In or Exchange with sensitivity and expertise.',
       benefit: 'Handle complex family property matters with care',
     },
   ];

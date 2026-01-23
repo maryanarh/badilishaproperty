@@ -29,7 +29,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-sm text-gray-400 mb-4">
-              Simplifying property transitions through innovative home and property swaps. Move forward without the wait.
+              Simplifying property transitions through innovative home and property Trade-in and Exchange. Move forward without the wait.
             </p>
           </div>
 
@@ -74,7 +74,7 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-semibold mb-4">Our Services</h4>
             <ul className="space-y-2 text-sm">
-              <li>Property Swapping</li>
+              <li>Property Trade-In and Exchange</li>
               <li>Professional Valuation</li>
               <li>Legal Support</li>
               <li>Financial Settlement</li>

@@ -51,15 +51,14 @@ export default function Hero() {
             </h1>
 
             <p className="text-x1 max-w-xl text-slate-900">
-              Badilisha Properties Limited is not a traditional real estate agency.
-              We help people move from one life position to another through using property
-              as the engine, not the end goal.
+              Badilisha Properties Limited isn’t a typical real estate agency.
+              We help people move from one stage of life to the next by using property as a tool  not the final goal
             </p>
 
             <p className="text-base max-w-lg text-slate-800">
-              Instead of asking how much a property can sell for, we focus on where
-              you need to go next—and how to get you there without breaking your
-              capital, timeline, or peace of mind.
+              Instead of starting with “How much can this sell for?”, we start with “Where do you want to go next?”
+              Then we figure out the smartest way to get you there without draining your value, stretching your timeline,
+              or adding unnecessary stress.
             </p>
 
             {/* Trust pill */}
@@ -133,7 +132,7 @@ export default function Hero() {
 
               {/* Micro testimonial */}
               <p className="text-base italic text-slate-700">
-                “We didn’t just sell a house. We moved forward.”
+                “We didn’t just sell a house. We moved forward with you.”
               </p>
             </div>
           </div>

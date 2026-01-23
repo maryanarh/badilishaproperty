@@ -9,7 +9,7 @@ const testimonials = [
     location: "Nairobi",
     avatar: User,
     rating: 5,
-    text: "We moved into our new home without selling first — no pressure, no chaos. Badilisha structured the swap from valuation to handover, handled the legal coordination, and aligned both timelines so nothing stalled. What stood out most was the calm confidence of the process; every step was explained, priced fairly, and executed exactly as agreed.",
+    text: "We moved into our new home without selling first — no pressure, no chaos. Badilisha structured the property Trade-In from valuation to handover, handled the legal coordination, and aligned both timelines so nothing stalled. What stood out most was the calm confidence of the process; every step was explained, priced fairly, and executed exactly as agreed.",
     results: ["Zero selling stress", "All paperwork handled", "Weeks saved"]
   },
   {
@@ -18,7 +18,7 @@ const testimonials = [
     location: "Kilimani",
     avatar: User,
     rating: 5,
-    text: "Instead of waiting months to sell, we moved straight into the right home for our family. Badilisha matched us with a compatible property, balanced the values transparently, and coordinated the transfer so we never felt exposed. The swap model was practical, structured, and delivered exactly what we needed at that stage of life.",
+    text: "Instead of waiting months to sell, we moved straight into the right home for our family. Badilisha matched us with a compatible property, balanced the values transparently, and coordinated the transfer so we never felt exposed. The Trade-In and Exchange model was practical, structured, and delivered exactly what we needed at that stage of life.",
     results: ["Immediate move-in", "Seamless transition", "Strong value exchange"]
   },
   {
@@ -36,7 +36,7 @@ const testimonials = [
     location: "Westlands",
     avatar: User,
     rating: 5,
-    text: "The idea of swapping homes sounded risky until we experienced it. Badilisha broke the process down clearly, verified every detail, and managed the exchange as one coordinated transaction. Instead of stress, we felt guided and protected throughout.",
+    text: "The idea of property Trading in homes and getting the balannce on top sounded risky until we experienced it. Badilisha broke the process down clearly, verified every detail, and managed the exchange as one coordinated transaction. Instead of stress, we felt guided and protected throughout.",
     results: ["Guided process", "Risk reduced", "Confidence restored"]
   },
   {

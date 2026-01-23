@@ -78,7 +78,7 @@ export default function Navigation() {
               onClick={() => scrollToSection('contact')}
               className="hidden lg:block bg-gradient-to-r from-emerald-500 to-teal-600 text-white px-6 py-2.5 rounded-lg font-semibold hover:shadow-lg hover:scale-105 transition-all"
             >
-              Start Your Swap
+              Start Your Trade-In
             </button>
 
             {/* Mobile Menu Button */}
@@ -118,7 +118,7 @@ export default function Navigation() {
               onClick={() => scrollToSection('contact')}
               className="w-full bg-gradient-to-r from-emerald-500 to-teal-600 text-white px-4 py-3 rounded-lg font-semibold hover:shadow-lg transition-all text-center"
             >
-              Start Your Swap
+              Start Your Trade-In
             </button>
           </div>
         </div>

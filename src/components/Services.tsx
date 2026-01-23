@@ -1,6 +1,6 @@
 import { RefreshCw, Banknote, Award } from 'lucide-react';
 
-type ServiceType = 'swap' | 'sale' | 'subdivision';
+type ServiceType = 'Trade-In and Exchange' | 'sale' | 'subdivision';
 
 export default function Services() {
   const services: {
@@ -16,19 +16,19 @@ export default function Services() {
   }[] = [
   {
     icon: RefreshCw,
-    title: 'Property Trade-In (Swap)',
+    title: 'Property Trade-In and Exchange',
     benefit: 'Enables direct exchange between property owners who want a different asset rather than a cash exit',
     bullets: [
       '• Direct trade with a matched property owner',
       '• Clear top-up or payout where values differ',
       '• Full paperwork and process handled by us'
     ],
-    type: 'swap',
+    type: 'Trade-In and Exchange',
     images: [
       '/Apartment.webp',
       '/Bungalow.webp'
     ],
-    alt: 'Property swapping illustration with two distinct homes',
+    alt: 'Property Trade-In and Exchange illustration with two distinct homes',
     iconColor: 'text-emerald-600',
     bgColor: 'bg-emerald-100'
   },
@@ -72,7 +72,7 @@ export default function Services() {
 
   const getServiceIcon = (type: ServiceType) => {
     switch(type) {
-      case 'swap':
+      case 'Trade-In and Exchange':
         return RefreshCw;
       case 'sale':
         return Banknote;
@@ -85,7 +85,7 @@ export default function Services() {
 
   const getIconClass = (type: ServiceType) => {
     switch(type) {
-      case 'swap':
+      case 'Trade-In and Exchange':
         return 'w-4 h-4 text-white';
       case 'sale':
         return 'w-4 h-4 text-white';
@@ -98,7 +98,7 @@ export default function Services() {
 
   const getIconBgColor = (type: ServiceType) => {
     switch(type) {
-      case 'swap':
+      case 'Trade-In and Exchange':
         return 'bg-emerald-600';
       case 'sale':
         return 'bg-blue-600';

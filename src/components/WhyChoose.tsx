@@ -41,7 +41,7 @@ export default function WhyChoose() {
       icon: Sparkles,
       title: "Property Matching Algorithms",
       description:
-        "Our intelligent algorithm makes it effortless to match your property with your desired swap saving you time, stress, and endless searching.",
+        "Our intelligent algorithm makes it effortless to match your property with your desired property Trade-In or Exchange saving you time, stress, and endless searching.",
       stat: "Personalized matches",
     },
     {
@@ -149,7 +149,7 @@ export default function WhyChoose() {
                 <CheckCircle className="w-8 h-8 text-emerald-600" />
                 <div>
                   <p className="text-lg font-semibold text-gray-900">
-                    Swap in weeks
+                  Trade-I in weeks
                   </p>
                   <p className="text-gray-600 mt-1">
                     Predictable timeline, move forward quickly

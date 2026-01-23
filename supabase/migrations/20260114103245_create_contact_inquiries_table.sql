@@ -3,7 +3,7 @@
 
   ## Overview
   This migration creates a table to store contact form submissions from potential clients
-  interested in property swaps through Badilisha Properties.
+  interested in property Trade-In or Exchange through Badilisha Properties.
 
   The schema is intentionally aligned with the current React contact form
   to avoid insert failures and ensure a stable production setup.
