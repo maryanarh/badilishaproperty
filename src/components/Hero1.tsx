@@ -1,6 +1,13 @@
 "use client"
 
-import { ArrowRight, MessageCircle } from "lucide-react"
+import {
+  ArrowRight,
+  MessageCircle,
+  Instagram,
+  Facebook,
+  Twitter,
+  Linkedin
+} from "lucide-react"
 
 export default function Hero() {
   const scrollToServiceChooser = () => {
@@ -29,20 +36,21 @@ export default function Hero() {
         text-white
         bg-no-repeat
         bg-cover
-        bg-[center_5  0%]
+        bg-[center_50%]
         sm:bg-center
       "
       style={{
         backgroundImage: "url('/Background.webp')",
       }}
     >
-      {/* Overlay — slightly lighter on mobile so details show */}
+      {/* Overlay */}
       <div className="absolute inset-0 bg-black/35 sm:bg-black/45" />
 
       {/* CONTENT */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
         <div className="grid lg:grid-cols-2 items-center h-full">
           <div className="space-y-6 sm:space-y-7 max-w-xl">
+
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight drop-shadow-lg">
               Property isn’t just a transaction <br />
               <span className="text-emerald-300">
@@ -59,13 +67,14 @@ export default function Hero() {
             <p className="text-base sm:text-lg text-white/90 drop-shadow">
               We start with where you’re going, not just what you’re selling.
               Badilisha bridges you to your next home through a smarter,
-              calmer transition.  
+              calmer transition.
             </p>
 
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-sm font-medium text-emerald-200 shadow-sm">
               🇰🇪 Trusted by homeowners across Kenya
             </div>
 
+            {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <button
                 onClick={scrollToServiceChooser}
@@ -83,10 +92,28 @@ export default function Hero() {
                 <span>Talk to Us</span>
               </button>
             </div>
+
+            {/* SOCIAL ICONS — TRANSPARENT */}
+            <div className="flex items-center gap-4 pt-2">
+              {[Instagram, Facebook, Twitter, Linkedin].map((Icon, i) => (
+                <a
+                  key={i}
+                  href="#"
+                  aria-label="Social link"
+                  className="
+                    text-white/70
+                    hover:text-emerald-300
+                    transition-colors
+                  "
+                >
+                  <Icon className="w-5 h-5" />
+                </a>
+              ))}
+            </div>
+
           </div>
         </div>
       </div>
     </section>
   )
 }
- 

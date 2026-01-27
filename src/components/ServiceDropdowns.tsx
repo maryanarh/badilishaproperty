@@ -25,7 +25,7 @@ const services: ServiceDropdown[] = [
     theme: "emerald",
     icon: <RefreshCw className="h-5 w-5 text-emerald-700" />,
     iconBg: "bg-emerald-100",
-    title: "Property Trade-In",
+    title: "Property Trade-In and Exchange",
     subtitle: "Swap one property for another",
     subcategories: [
       {
