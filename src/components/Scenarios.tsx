@@ -1,4 +1,3 @@
-import { cn } from "../lib/cn";
 import {
   ArrowRight,
   Users,
@@ -10,7 +9,7 @@ import {
   Key,
   Maximize,
   MapPin,
-  Scale
+  Scale,
 } from "lucide-react";
 
 export default function Scenarios() {
@@ -18,7 +17,7 @@ export default function Scenarios() {
     {
       icon: Users,
       title: "Growing family? Need more space",
-      text: "You need a bigger home now. You can trade In your current house to someone who wants your place through us.",
+      text: "You need a bigger home now. You can trade in your current house to someone who wants your place through us.",
       service: "Trade-In",
     },
     {
@@ -48,7 +47,7 @@ export default function Scenarios() {
     {
       icon: Handshake,
       title: "Own land but need clarity or funding?",
-      text: "Unlock flexibility through proper subdivision and registration. Gain control for sale, inheritance, or development",
+      text: "Unlock flexibility through proper subdivision and registration. Gain control for sale, inheritance, or development.",
       service: "Subdivision",
     },
     {
@@ -60,7 +59,7 @@ export default function Scenarios() {
     {
       icon: MapPin,
       title: "Relocating but don’t want to sit out?",
-      text: "Move to a new area without liquidating everything. We handle the transition so value stays working",
+      text: "Move to a new area without liquidating everything. We handle the transition so value stays working.",
       service: "Trade-In",
     },
     {
@@ -80,8 +79,8 @@ export default function Scenarios() {
       details: [
         "Avoids sitting on cash while searching",
         "Reduces high maintenance costs",
-        "Transitions to right-sized living"
-      ]
+        "Transitions to right-sized living",
+      ],
     },
     {
       step: "Match",
@@ -91,8 +90,8 @@ export default function Scenarios() {
       details: [
         "Direct property-to-property match",
         "Verified property valuations",
-        "Structured cash top-up balance"
-      ]
+        "Structured cash top-up balance",
+      ],
     },
     {
       step: "Resolution",
@@ -102,22 +101,21 @@ export default function Scenarios() {
       details: [
         "Single move-in/move-out window",
         "Zero duplicated transaction costs",
-        "Value locked in real estate"
-      ]
+        "Value locked in real estate",
+      ],
     },
   ];
 
-  // Helper function to scroll to the specific service dropdown
   const scrollToServiceDropdown = (serviceName: string) => {
-    // Converts "Trade-In" to "trade-in" and "Property Sale" to "property-sale"
-    const targetId = serviceName.toLowerCase().replace(/\s+/g, '-');
+    const targetId = serviceName.toLowerCase().replace(/\s+/g, "-");
     const element = document.getElementById(targetId);
 
     if (element) {
       element.scrollIntoView({ behavior: "smooth", block: "start" });
     } else {
-      // Logic if specific ID isn't found: find the main services section
-      document.getElementById("services")?.scrollIntoView({ behavior: "smooth" });
+      document
+        .getElementById("services")
+        ?.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -134,101 +132,126 @@ export default function Scenarios() {
           </p>
         </div>
 
-        {/* Scenarios Grid */}
-        <div className="relative z-10 mb-24 bg-white rounded-[2rem] overflow-hidden border border-slate-200 shadow-sm">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 group/grid">
+        {/* === SCENARIOS GRID (WhyChoose behavior) === */}
+        <div className="relative z-10 mb-24">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {scenarios.map((s, index) => (
-              <div
-                key={index}
-                className={cn(
-                  "flex flex-col py-12 relative group transition-all duration-300",
-                  "hover:bg-slate-50/50",
-                  index % 3 !== 2 && "lg:border-r border-slate-100",
-                  index % 2 !== 1 && "md:border-r border-slate-100",
-                  index < 6 && "lg:border-b border-slate-100",
-                  index < 8 && "md:border-b border-slate-100",
-                  "border-b md:border-b-0 last:border-b-0 border-slate-100"
-                )}
-              >
-                {/* Accent rail */}
-                <div className="absolute left-0 inset-y-0 w-1 bg-slate-100 group-hover:bg-emerald-500 transition-colors duration-300" />
-                
-                {/* Watermark icon */}
-                <s.icon className="pointer-events-none absolute -right-4 top-1/2 h-32 w-32 -translate-y-1/2 text-slate-900/[0.02] group-hover:text-emerald-500/[0.04] transition-colors" />
+              <div key={index} className="group h-full">
+                <div
+                  className="
+                    relative h-full rounded-2xl p-8
+                    bg-gradient-to-br from-white to-slate-50
+                    border border-slate-200/60
+                    shadow-lg hover:shadow-2xl
+                    hover:-translate-y-1
+                    transition-all duration-300
+                    overflow-hidden
+                  "
+                >
+                  {/* Glass layer */}
+                  <div className="absolute inset-0 bg-white/70 pointer-events-none" />
 
-                <div className="mb-6 relative z-10 px-10">
-                  <div className="bg-emerald-50 w-12 h-12 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
-                    <s.icon className="w-6 h-6 text-emerald-700" />
+                  {/* Accent rail */}
+                  <div className="absolute left-0 top-0 h-full w-1 bg-emerald-500/0 group-hover:bg-emerald-500 transition-colors duration-300" />
+
+                  {/* Watermark icon */}
+                  <s.icon className="pointer-events-none absolute -right-6 top-1/2 h-32 w-32 -translate-y-1/2 text-slate-900/[0.03] group-hover:text-emerald-500/[0.06] transition-colors" />
+
+                  <div className="relative z-10 flex flex-col h-full">
+                    {/* Icon */}
+                    <div className="mb-6">
+                      <div className="bg-emerald-50 w-12 h-12 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <s.icon className="w-6 h-6 text-emerald-700" />
+                      </div>
+                    </div>
+
+                    {/* Title */}
+                    <h3 className="text-xl font-bold text-slate-900 mb-3 leading-tight">
+                      {s.title}
+                    </h3>
+
+                    {/* Description */}
+                    <p className="text-slate-700 mb-8 text-lg leading-relaxed">
+                      {s.text}
+                    </p>
+
+                    {/* CTA */}
+                    <div className="mt-auto">
+                      <button
+                        onClick={() =>
+                          scrollToServiceDropdown(s.service)
+                        }
+                        className="flex items-center gap-2 text-emerald-700 text-sm font-bold hover:gap-3 transition-all"
+                      >
+                        See {s.service} options{" "}
+                        <ArrowRight className="w-4 h-4" />
+                      </button>
+                    </div>
                   </div>
-                </div>
-
-                <div className="text-xl font-bold mb-3 relative z-10 px-10 text-slate-900 leading-tight">
-                  <span className="group-hover:translate-x-1 transition duration-300 inline-block">
-                    {s.title}
-                  </span>
-                </div>
-
-                <p className="text-slate-700 mb-8 max-w-xs relative z-10 px-10 text-lg leading-relaxed">
-                  {s.text}
-                </p>
-
-                <div className="mt-auto relative z-10 px-10">
-                  <button
-                    onClick={() => scrollToServiceDropdown(s.service)}
-                    className="flex items-center gap-2 text-emerald-700 text-sm font-bold hover:gap-3 transition-all"
-                  >
-                    See {s.service} options <ArrowRight className="w-4 h-4" />
-                  </button>
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-
-        {/* Story Section */}
-        <div className="relative overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-emerald-950 via-emerald-900 to-emerald-800 p-8 md:p-16 shadow-2xl">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(52,211,153,0.15),transparent_50%)]" />
-
-          <h3 className="relative z-10 text-3xl font-bold text-white text-center mb-16">
-            A Real Badilisha Scenario
-          </h3>
-
-          <div className="grid md:grid-cols-3 gap-8 relative group">
-            {stories.map((step, i) => (
-              <div key={i} className="relative z-10">
-                <div className="relative h-full overflow-hidden rounded-3xl bg-emerald-800/40 p-8 backdrop-blur-xl border border-emerald-700/50 shadow-xl transition-all duration-300 hover:-translate-y-2">
-                  <span className="absolute left-0 top-0 h-full w-1.5 bg-gradient-to-b from-emerald-400/60 via-emerald-300/30 to-transparent rounded-l-3xl" />
-                  <step.icon className="pointer-events-none absolute -right-6 top-1/2 h-40 w-40 -translate-y-1/2 text-emerald-300/5" />
-
-                  <div className="text-emerald-400 font-bold text-xs uppercase tracking-[0.2em] mb-4 opacity-80">
-                    {step.step}
-                  </div>
-                  
-                  <h4 className="text-xl font-bold text-white mb-4 relative z-10">
-                    {step.title}
-                  </h4>
-                  
-                  <p className="text-emerald-50/80 leading-relaxed mb-6 text-sm relative z-10">
-                    {step.text}
-                  </p>
-
-                  <ul className="relative space-y-3 z-10">
-                    {step.details.map((detail, idx) => (
-                      <li key={idx} className="flex items-start gap-2">
-                        <ArrowRight className="mt-1 h-3 w-3 flex-shrink-0 text-emerald-400" />
-                        <span className="text-xs text-emerald-100/70 leading-tight">
-                          {detail}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            ))}
-            <div className="hidden md:block absolute top-1/2 left-0 w-full h-px bg-emerald-500/10 -translate-y-24 z-0" />
           </div>
         </div>
       </div>
+
+{/* === STORY SECTION === */}
+<div className="relative overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-emerald-900 via-emerald-800 to-emerald-700 p-8 md:p-16 shadow-2xl">
+  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(52,211,153,0.12),transparent_55%)]" />
+
+  <h3 className="relative z-10 text-3xl font-bold text-white text-center mb-16">
+    A Real Badilisha Scenario
+  </h3>
+
+  <div className="grid md:grid-cols-3 gap-8 relative group">
+    {stories.map((step, i) => (
+      <div key={i} className="relative z-10">
+        <div
+          className="
+            relative h-full overflow-hidden rounded-3xl
+            bg-white/5
+            backdrop-blur-xl
+            p-8
+            shadow-xl
+            transition-all duration-300
+            hover:-translate-y-2
+            hover:bg-white/10
+          "
+        >
+          {/* Accent rail */}
+          <span className="absolute left-0 top-0 h-full w-1.5 bg-gradient-to-b from-emerald-400/60 via-emerald-300/30 to-transparent rounded-l-3xl" />
+
+          {/* Watermark icon */}
+          <step.icon className="pointer-events-none absolute -right-6 top-1/2 h-40 w-40 -translate-y-1/2 text-emerald-300/5" />
+
+          <div className="text-emerald-300 font-bold text-xs uppercase tracking-[0.2em] mb-4 opacity-80">
+            {step.step}
+          </div>
+
+          <h4 className="text-xl font-bold text-white mb-4">
+            {step.title}
+          </h4>
+
+          <p className="text-emerald-50/80 leading-relaxed mb-6 text-sm">
+            {step.text}
+          </p>
+
+          <ul className="space-y-3">
+            {step.details.map((detail, idx) => (
+              <li key={idx} className="flex items-start gap-2">
+                <ArrowRight className="mt-1 h-3 w-3 text-emerald-400" />
+                <span className="text-xs text-emerald-100/70">
+                  {detail}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
+
     </section>
   );
 }

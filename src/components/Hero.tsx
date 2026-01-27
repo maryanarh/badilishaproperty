@@ -44,9 +44,9 @@ export default function Hero() {
           {/* LEFT */}
           <div className="space-y-7">
             <h1 className="text-3xl md:text-5xl font-bold leading-tight">
-              Property isn’t just something you sell. <br />
+              Property isn’t just a transaction <br />
               <span className="text-emerald-700">
-                It’s where your life is positioned.
+              It’s a life decision.
               </span>
             </h1>
 
@@ -55,7 +55,7 @@ export default function Hero() {
               We help people move from one stage of life to the next by using property as a tool  not the final goal
             </p>
 
-            <p className="text-base max-w-lg text-slate-800">
+            <p className="text-base max-w-lg text-slate-900">
               Instead of starting with “How much can this sell for?”, we start with “Where do you want to go next?”
               Then we figure out the smartest way to get you there without draining your value, stretching your timeline,
               or adding unnecessary stress.

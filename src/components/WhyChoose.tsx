@@ -1,3 +1,5 @@
+"use client"
+
 import {
   Shield,
   Clock,
@@ -5,7 +7,7 @@ import {
   Sparkles,
   CheckCircle,
   SlidersHorizontal,
-} from "lucide-react";
+} from "lucide-react"
 
 export default function WhyChoose() {
   const benefits = [
@@ -14,14 +16,20 @@ export default function WhyChoose() {
       title: "No Need to Sell First",
       description:
         "Move forward without selling, waiting, then buying again. Trade in and settle only the difference, with timing handled upfront.",
-      stat: "2-4 weeks faster",
+      stat: "2–4 weeks faster",
+      theme: "from-emerald-500/10 to-teal-500/5",
+      badge: "bg-emerald-100 text-emerald-700",
+      iconBg: "from-emerald-500 to-teal-600",
     },
     {
       icon: DollarSign,
       title: "Cost Savings",
       description:
-        "Avoid multiple agent fees, dual mortgages, and bridging loans. Capital is preserved instead of drained by process inefficiencies",
+        "Avoid multiple agent fees, dual mortgages, and bridging loans. Capital is preserved instead of drained by process inefficiencies.",
       stat: "Save thousands",
+      theme: "from-sky-500/10 to-blue-500/5",
+      badge: "bg-sky-100 text-sky-700",
+      iconBg: "from-sky-500 to-blue-600",
     },
     {
       icon: Shield,
@@ -29,6 +37,9 @@ export default function WhyChoose() {
       description:
         "Certified valuations anchor every decision. No emotional pricing, no speculative gaps, just aligned expectations.",
       stat: "100% transparent",
+      theme: "from-emerald-500/10 to-lime-500/5",
+      badge: "bg-emerald-100 text-emerald-700",
+      iconBg: "from-emerald-500 to-lime-600",
     },
     {
       icon: SlidersHorizontal,
@@ -36,69 +47,103 @@ export default function WhyChoose() {
       description:
         "Cash balances are designed with purpose, not pressure. Subdivision is used strategically without forcing full exits.",
       stat: "Built for real life",
+      theme: "from-amber-400/10 to-yellow-400/5",
+      badge: "bg-amber-100 text-amber-700",
+      iconBg: "from-amber-500 to-yellow-500",
     },
     {
       icon: Sparkles,
       title: "Property Matching Algorithms",
       description:
-        "Our intelligent algorithm makes it effortless to match your property with your desired property Trade-In or Exchange saving you time, stress, and endless searching.",
+        "Our intelligent algorithm matches your property with your next move effortlessly, saving time and stress.",
       stat: "Personalized matches",
+      theme: "from-teal-500/10 to-cyan-500/5",
+      badge: "bg-teal-100 text-teal-700",
+      iconBg: "from-teal-500 to-cyan-600",
     },
     {
       icon: CheckCircle,
       title: "End-to-End Support",
       description:
-        "From valuation to moving day, we handle the legal, financial, and administrative complexities with you.",
+        "From valuation to moving day, we handle the legal, financial, and administrative complexity with you.",
       stat: "Full guidance",
+      theme: "from-emerald-500/10 to-sky-500/5",
+      badge: "bg-emerald-100 text-emerald-700",
+      iconBg: "from-emerald-500 to-sky-600",
     },
-  ];
+  ]
 
   return (
     <section
       id="why-choose"
-      className="relative py-16 md:py-24 bg-cover bg-center bg-no-repeat"
-      style={{
-        backgroundImage:
-          "url('/Background.jpeg')",
-      }}
+      className="relative overflow-hidden py-20 md:py-28"
     >
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-white/80 backdrop-blur-sm" />
+      {/* === STABLE GRADIENT BACKGROUND === */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#e6f4ee] via-[#d9efe7] to-[#c7e6da]" />
 
+      {/* Soft radial highlight */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.7),transparent_60%)]" />
+
+      {/* === CONTENT === */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Why Choose Badilisha
           </h2>
-          <p className="text-xl text-black-600 max-w-3xl mx-auto">
-            We're not just another real estate company. We're building a smarter,
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+            We’re not just another real estate company. We’re building a smarter,
             fairer way to move forward.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {benefits.map((benefit, index) => (
-            <div key={index} className="group">
-              <div className="bg-gradient-to-br from-gray-50 to-emerald-50/70 rounded-2xl p-8 h-full hover:shadow-xl transition-all border border-gray-100">
-                <div className="flex items-start justify-between mb-4">
-                  <div className="bg-gradient-to-br from-emerald-500 to-teal-600 p-3 rounded-xl group-hover:scale-110 transition-transform">
-                    <benefit.icon className="w-6 h-6 text-white" />
-                  </div>
-                  <span className="bg-emerald-100 text-emerald-700 text-xs font-semibold px-3 py-1 rounded-full">
-                    {benefit.stat}
-                  </span>
-                </div>
+            <div key={index} className="group h-full">
+              <div
+                className={`relative h-full rounded-2xl p-8
+                bg-gradient-to-br ${benefit.theme}
+                border border-white/60
+                shadow-lg hover:shadow-2xl
+                hover:-translate-y-1 transition-all`}
+              >
+                {/* subtle glass layer */}
+                <div className="absolute inset-0 bg-white/70 rounded-2xl" />
 
-                <h3 className="text-2xl font-bold text-gray-900 mb-3">
-                  {benefit.title}
-                </h3>
-                <p className="text-lg text-black-600 leading-relaxed">
-                  {benefit.description}
-                </p>
+                <div className="relative">
+                  <div className="flex items-start justify-between mb-4">
+                    <div
+                      className={`bg-gradient-to-br ${benefit.iconBg}
+                      p-3 rounded-xl group-hover:scale-110 transition-transform`}
+                    >
+                      <benefit.icon className="w-6 h-6 text-white" />
+                    </div>
+
+                    <span
+                      className={`text-xs font-semibold px-3 py-1 rounded-full ${benefit.badge}`}
+                    >
+                      {benefit.stat}
+                    </span>
+                  </div>
+
+                  <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                    {benefit.title}
+                  </h3>
+
+                  <p className="text-lg text-gray-700 leading-relaxed">
+                    {benefit.description}
+                  </p>
+                </div>
               </div>
             </div>
           ))}
         </div>
+      </div>
+    </section>
+  )
+}
+
+
+
 
         {/* <div className="bg-white rounded-2xl p-8 md:p-12 shadow-lg border border-gray-100 mb-8">
           <h3 className="text-3xl font-bold text-gray-900 mb-12 text-center">
@@ -206,8 +251,6 @@ export default function WhyChoose() {
               treatment. No hidden fees, no surprises, no pressure.
             </p>
           </div>
-        </div>*/}
-      </div>
-    </section>
-  );
-}
+        </div>*/
+      }
+

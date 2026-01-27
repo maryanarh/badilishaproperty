@@ -1,11 +1,11 @@
 import Navigation from './components/Navigation';
-import Hero from './components/Hero';
+import Hero1 from './components/Hero1';
 import About from './components/About';
 import Scenarios from './components/Scenarios';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import WhyChoose from './components/WhyChoose';
-import Services from './components/Services';
+import Services1 from './components/Services1';
 import { PremiumTestimonials } from './components/Testimonialss';
 import ScrollProgressIndicator from "./components/ScrollProgressIndicator"
 import { ServiceDropdowns } from './components/ServiceDropdowns';
@@ -16,9 +16,9 @@ function App() {
     <div className="min-h-screen bg-white font-sans text-slate-900">
       <Navigation />
       <ScrollProgressIndicator />
-      <Hero />
+      <Hero1 />
       <About/>
-      <Services />
+      <Services1 />
       <ServiceDropdowns />
       <Scenarios />
       <WhyChoose />

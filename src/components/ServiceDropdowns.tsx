@@ -23,7 +23,7 @@ const services: ServiceDropdown[] = [
   {
     id: "trade-in-dropdown",
     theme: "emerald",
-    icon: <RefreshCw className="h-5 w-5 text-emerald-600" />,
+    icon: <RefreshCw className="h-5 w-5 text-emerald-700" />,
     iconBg: "bg-emerald-100",
     title: "Property Trade-In",
     subtitle: "Swap one property for another",
@@ -63,7 +63,7 @@ const services: ServiceDropdown[] = [
   {
     id: "property-sale-dropdown",
     theme: "blue",
-    icon: <Banknote className="h-5 w-5 text-blue-600" />,
+    icon: <Banknote className="h-5 w-5 text-blue-700" />,
     iconBg: "bg-blue-100",
     title: "Property Sale",
     subtitle: "Sell clearly and confidently",
@@ -103,7 +103,7 @@ const services: ServiceDropdown[] = [
   {
     id: "subdivision-dropdown",
     theme: "amber",
-    icon: <Award className="h-5 w-5 text-amber-600" />,
+    icon: <Award className="h-5 w-5 text-amber-700" />,
     iconBg: "bg-amber-100",
     title: "Subdivision & Registration",
     subtitle: "Unlock land value safely",
@@ -146,79 +146,126 @@ export function ServiceDropdowns() {
   const [openService, setOpenService] = useState<string | null>(null)
   const [openSub, setOpenSub] = useState<string | null>(null)
 
-  const getThemeStyles = (theme: "emerald" | "blue" | "amber", isActive: boolean) => {
-    if (!isActive) return "border-transparent"
-    switch (theme) {
-      case "emerald": return "border-l-emerald-500 shadow-emerald-500/10"
-      case "blue": return "border-l-blue-500 shadow-blue-500/10"
-      case "amber": return "border-l-amber-500 shadow-amber-500/10"
-      default: return "border-l-neutral-500"
-    }
+  const themeSurface = {
+    emerald: "bg-emerald-50/80",
+    blue: "bg-blue-50/80",
+    amber: "bg-amber-50/80",
   }
 
-  const getActiveText = (theme: "emerald" | "blue" | "amber") => {
-    switch (theme) {
-      case "emerald": return "text-emerald-800"
-      case "blue": return "text-blue-800"
-      case "amber": return "text-amber-800"
-      default: return "text-neutral-900"
-    }
+  const themeBorder = {
+    emerald: "bg-emerald-400",
+    blue: "bg-blue-400",
+    amber: "bg-amber-400",
+  }
+
+  const themeText = {
+    emerald: "text-emerald-800",
+    blue: "text-blue-800",
+    amber: "text-amber-800",
+  }
+
+  const themeDot = {
+    emerald: "bg-emerald-500",
+    blue: "bg-blue-500",
+    amber: "bg-amber-500",
   }
 
   return (
-    <div className="space-y-6 max-w-5xl mx-auto pb-16 px-4">
+    <div className="space-y-8 max-w-5xl mx-auto pb-20 px-4">
       {services.map((service) => {
         const isServiceOpen = openService === service.id
 
         return (
           <div
             key={service.id}
-            id={service.id}
-            className={`bg-white border border-neutral-200 shadow-xl shadow-black/5 transition-all duration-300 min-h-[72px] hover:shadow-2xl hover:shadow-black/10 hover:-translate-y-1 ${
-              isServiceOpen ? "rounded-3xl" : "rounded-2xl"
+            className={`border transition-all duration-300 ${
+              isServiceOpen
+                ? `rounded-3xl shadow-xl ${themeSurface[service.theme]}`
+                : "rounded-2xl bg-white shadow-md hover:shadow-lg"
             }`}
           >
             <div
               onClick={() => setOpenService(isServiceOpen ? null : service.id)}
-              className="flex items-center gap-4 p-5 cursor-pointer group"
+              className="flex items-center gap-4 p-6 cursor-pointer"
             >
-              <div className={`h-12 w-12 rounded-xl flex items-center justify-center transition-transform duration-300 group-hover:scale-105 ${service.iconBg}`}>
+              <div
+                className={`h-12 w-12 rounded-xl flex items-center justify-center ${service.iconBg}`}
+              >
                 {service.icon}
               </div>
 
               <div className="flex-1">
-                <h3 className="font-semibold text-neutral-900 text-lg">{service.title}</h3>
-                {!isServiceOpen && <p className="text-sm text-neutral-500">{service.subtitle}</p>}
+                <h3 className="font-semibold text-neutral-900 text-lg">
+                  {service.title}
+                </h3>
+                {!isServiceOpen && (
+                  <p className="text-sm text-neutral-500">{service.subtitle}</p>
+                )}
               </div>
 
-              <ChevronUp className={`h-5 w-5 text-neutral-400 transition-transform duration-300 ${isServiceOpen ? "rotate-0" : "rotate-180"}`} />
+              <ChevronUp
+                className={`h-5 w-5 text-neutral-400 transition-transform ${
+                  isServiceOpen ? "rotate-0" : "rotate-180"
+                }`}
+              />
             </div>
 
             {isServiceOpen && (
-              <div className="px-5 pb-8 space-y-3">
+              <div className="px-6 pb-8 space-y-4">
                 {service.subcategories.map((sub) => {
-                  const subKey = `${service.id}-${sub.title}`
-                  const isOpen = openSub === subKey
+                  const key = `${service.id}-${sub.title}`
+                  const isOpen = openSub === key
 
                   return (
                     <div
                       key={sub.title}
-                      className={`rounded-xl overflow-hidden transition-all duration-300 border-l-[4px] ${
-                        isOpen ? `bg-white shadow-lg ${getThemeStyles(service.theme, true)} my-3` : "bg-neutral-50 hover:bg-neutral-100 border-transparent"
+                      className={`rounded-xl transition-all ${
+                        isOpen
+                          ? `bg-white shadow-md`
+                          : `${themeSurface[service.theme]} hover:brightness-95`
                       }`}
                     >
                       <button
-                        onClick={() => setOpenSub(isOpen ? null : subKey)}
-                        className={`w-full flex justify-between items-center p-4 text-left ${isOpen ? "pb-2" : "pb-4"}`}
+                        onClick={() => setOpenSub(isOpen ? null : key)}
+                        className="w-full flex justify-between items-start gap-4 p-4 text-left
+                                   outline-none focus:outline-none focus:ring-0
+                                   focus-visible:outline-none focus-visible:ring-0"
                       >
-                        <span className={`font-medium transition-colors duration-200 ${isOpen ? getActiveText(service.theme) : "text-neutral-600"}`}>
-                          {sub.title}
-                        </span>
-                        <ChevronUp className={`h-4 w-4 text-neutral-400 transition-transform duration-300 ${isOpen ? "rotate-0" : "rotate-180"}`} />
+                        <div className="flex-1">
+                          <div className="flex items-center gap-3">
+                            {/* small colored dot to give life to each option */}
+                            <span
+                              className={`inline-block h-2 w-2 rounded-full ${themeDot[service.theme]}`}
+                              aria-hidden
+                            />
+                            <span
+                              className={`font-medium ${
+                                isOpen
+                                  ? themeText[service.theme]
+                                  : `${themeText[service.theme]} text-opacity-80`
+                              }`}
+                            >
+                              {sub.title}
+                            </span>
+                          </div>
+
+                          {/* subtle divider between title and description (visible when open) */}
+                          {isOpen && (
+                            <div
+                              className={`mt-4 h-px ${themeBorder[service.theme]} opacity-60`}
+                            />
+                          )}
+                        </div>
+
+                        <ChevronUp
+                          className={`h-4 w-4 transition-transform ${
+                            isOpen ? "rotate-0" : "rotate-180"
+                          }`}
+                        />
                       </button>
 
                       {isOpen && (
-                        <div className="px-4 pt-2 pb-6 text-sm text-neutral-600 leading-relaxed max-w-3xl">
+                        <div className="px-6 pb-6 text-sm text-neutral-700 leading-relaxed max-w-3xl">
                           {sub.description}
                         </div>
                       )}

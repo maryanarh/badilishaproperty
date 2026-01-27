@@ -1,128 +1,134 @@
-import { useState, useEffect } from 'react';
-import { Menu, X, Home } from 'lucide-react';
+"use client"
+
+import { useState, useEffect } from "react"
+import { Menu, X, Home } from "lucide-react"
 
 export default function Navigation() {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolledPastHero, setIsScrolledPastHero] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+      const hero = document.getElementById("hero")
+      if (!hero) return
+
+      const heroHeight = hero.offsetHeight
+      setIsScrolledPastHero(window.scrollY > heroHeight - 80)
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    handleScroll()
+
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
+    const element = document.getElementById(sectionId)
     if (element) {
-      const offset = 80; // Height of the navbar
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - offset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
-      // Close mobile menu after navigation
-      setIsMobileMenuOpen(false);
+      const offset = 90
+      const elementPosition = element.getBoundingClientRect().top
+      const offsetPosition = elementPosition + window.pageYOffset - offset
+      window.scrollTo({ top: offsetPosition, behavior: "smooth" })
+      setIsMobileMenuOpen(false)
     }
-  };
+  }
 
   const navLinks = [
-    { label: 'About', id: 'about' },
-    { label: 'Services', id: 'services' },
-    { label: 'Why Choose Us', id: 'why-choose' },
-    { label: 'Contact', id: 'contact' },
-  ];
+    { label: "ABOUT", id: "about" },
+    { label: "SERVICES", id: "services" },
+    { label: "WHY CHOOSE US", id: "why-choose" },
+    { label: "CONTACT", id: "contact" },
+  ]
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled || isMobileMenuOpen ? 'bg-white shadow-md' : 'bg-white/90 backdrop-blur-sm'
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        isScrolledPastHero
+          ? "bg-[#f6f4ef]/95 backdrop-blur-md shadow-sm"
+          : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="flex items-center h-20">
           {/* Logo */}
           <button
-            onClick={() => scrollToSection('hero')}
-            className="flex-shrink-0 flex items-center space-x-3 group"
+            onClick={() => scrollToSection("hero")}
+            className="flex items-center gap-3"
           >
-            <div className="bg-gradient-to-br from-emerald-500 to-teal-600 p-2 rounded-lg group-hover:scale-105 transition-transform">
-              <Home className="w-6 h-6 text-white" />
-            </div>
-            <div>
-              <h1 className="text-xl font-bold text-gray-900">Badilisha Properties Ltd</h1>
-              <p className="text-xs text-gray-600">Property Transitions Reimagined</p>
+            <div className="bg-emerald-600 p-2.5 rounded-xl shadow-md">
+              <Home className="w-5 h-5 text-white" />
             </div>
           </button>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-6">
-            {navLinks.map((link) => (
-              <button
-                key={link.id}
-                onClick={() => scrollToSection(link.id)}
-                className="text-gray-700 hover:text-emerald-600 font-medium transition-colors px-2 py-1"
-              >
-                {link.label}
-              </button>
-            ))}
-          </div>
+          {/* Centered Nav */}
+          <nav className="hidden lg:flex flex-1 justify-center">
+            <div className="flex items-center gap-10 font-serif tracking-wide">
+              {navLinks.map((link) => (
+                <button
+                  key={link.id}
+                  onClick={() => scrollToSection(link.id)}
+                  className={`text-sm transition-colors ${
+                    isScrolledPastHero
+                      ? "text-slate-700 hover:text-emerald-700"
+                      : "text-white/90 hover:text-emerald-300"
+                  }`}
+                >
+                  {link.label}
+                </button>
+              ))}
+            </div>
+          </nav>
 
-          {/* CTA & Mobile Menu Toggle */}
-          <div className="flex items-center">
-            {/* Desktop CTA */}
+          {/* CTA */}
+          <div className="hidden lg:flex items-center">
             <button
-              onClick={() => scrollToSection('contact')}
-              className="hidden lg:block bg-gradient-to-r from-emerald-500 to-teal-600 text-white px-6 py-2.5 rounded-lg font-semibold hover:shadow-lg hover:scale-105 transition-all"
+              onClick={() => scrollToSection("contact")}
+              className={`px-6 py-2.5 rounded-xl font-semibold transition-all ${
+                isScrolledPastHero
+                  ? "bg-emerald-600 text-white hover:bg-emerald-700"
+                  : "bg-white/20 backdrop-blur-md text-white border border-white/30 hover:bg-white/30"
+              }`}
             >
               Start Your Trade-In
             </button>
-
-            {/* Mobile Menu Button */}
-            <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
-              aria-label="Toggle menu"
-            >
-              {isMobileMenuOpen ? (
-                <X className="w-6 h-6 text-gray-700" />
-              ) : (
-                <Menu className="w-6 h-6 text-gray-700" />
-              )}
-            </button>
           </div>
+
+          {/* Mobile Toggle */}
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className={`lg:hidden ml-auto p-2 rounded-lg transition-colors ${
+              isScrolledPastHero ? "text-slate-700" : "text-white"
+            }`}
+          >
+            {isMobileMenuOpen ? <X /> : <Menu />}
+          </button>
         </div>
       </div>
 
       {/* Mobile Menu */}
       <div
-        className={`lg:hidden overflow-hidden transition-all duration-500 ease-in-out ${
-          isMobileMenuOpen ? 'max-h-screen' : 'max-h-0'
+        className={`lg:hidden transition-all duration-500 overflow-hidden ${
+          isMobileMenuOpen ? "max-h-screen" : "max-h-0"
         }`}
       >
-        <div className="px-4 pt-2 pb-4 space-y-2 border-t border-gray-200 bg-white">
+        <div className="bg-[#f6f4ef] px-6 py-6 space-y-4 shadow-inner">
           {navLinks.map((link) => (
             <button
               key={link.id}
               onClick={() => scrollToSection(link.id)}
-              className="block w-full text-left px-4 py-3 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-emerald-600 rounded-lg transition-colors"
+              className="block w-full text-center text-slate-700 font-serif tracking-wide text-lg hover:text-emerald-700 transition"
             >
               {link.label}
             </button>
           ))}
-          <div className="pt-4 px-4">
-            <button
-              onClick={() => scrollToSection('contact')}
-              className="w-full bg-gradient-to-r from-emerald-500 to-teal-600 text-white px-4 py-3 rounded-lg font-semibold hover:shadow-lg transition-all text-center"
-            >
-              Start Your Trade-In
-            </button>
-          </div>
+          <button
+            onClick={() => scrollToSection("contact")}
+            className="w-full mt-4 bg-emerald-600 text-white py-3 rounded-xl font-semibold"
+          >
+            Start Your Trade-In
+          </button>
         </div>
       </div>
     </header>
-  );
+  )
 }
