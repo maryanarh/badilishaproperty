@@ -1,5 +1,4 @@
-import { div } from 'framer-motion/client';
-import { Target, Eye, Heart, Lightbulb, Users, TrendingUp } from 'lucide-react';
+import { Target, Eye, Heart, Lightbulb, Users} from 'lucide-react';
 
 export default function About() {
   const values = [
@@ -37,13 +36,13 @@ export default function About() {
               <p>
                 Badilisha Properties Limited helps people move forward in life without losing the value they’ve worked so hard to build.
                 We started with a simple realization: when life changes, selling property often feels rushed, stressful, and costly.
-                Too many people walk away with less than they should. We believe there’s a better way 
+                Too many people walk away with less than they should. We believe there’s a better way
               </p>
 
               <p>
-               We don’t see property as something you’re forced to sell under pressure. We see it as value you can adjust, trade,
+              We don’t see property as something you’re forced to sell under pressure. We see it as value you can adjust, trade,
               or reshape to fit your next chapter. That mindset guides everything we do from how we value property to how we
-              hand it over so that decisions feel clear, fair, and made with people in mind.             
+              hand it over so that decisions feel clear, fair, and made with people in mind.
               </p>
             </div>
 
@@ -56,8 +55,8 @@ export default function About() {
             <h3 className="text-2xl font-bold">Our Mission</h3>
           </div>
           <p className="text-emerald-50 text-lg">
-           Our mission is to make property transitions straightforward and safe. We help homeowners move to what’s next through fair pricing,
-           smart property matching, and full legal support — without rushing sales or putting long-term value at risk.
+          Our mission is to make property transitions straightforward and safe. We help homeowners move to what’s next through fair pricing,
+          smart property matching, and full legal support without rushing sales or putting long term value at risk.
           </p>
         </div>
 

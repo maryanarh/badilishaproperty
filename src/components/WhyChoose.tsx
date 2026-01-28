@@ -15,7 +15,7 @@ export default function WhyChoose() {
       icon: Clock,
       title: "No Need to Sell First",
       description:
-        "Move forward without selling, waiting, then buying again. Trade in and settle only the difference, with timing handled upfront.",
+        "Move forward without selling, waiting, then buying again.  Trade-In and settle only the difference, with timing handled upfront.",
       stat: "2–4 weeks faster",
       theme: "from-emerald-500/10 to-teal-500/5",
       badge: "bg-emerald-100 text-emerald-700",

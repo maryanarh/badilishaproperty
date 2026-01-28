@@ -26,10 +26,10 @@ const services: ServiceDropdown[] = [
     icon: <RefreshCw className="h-5 w-5 text-emerald-700" />,
     iconBg: "bg-emerald-100",
     title: "Property Trade-In and Exchange",
-    subtitle: "Swap one property for another",
+    subtitle: "Trade-In one property for another",
     subcategories: [
       {
-        title: "Direct Property Swap",
+        title: "Direct Property Trade-In",
         description:
           "We help property owners exchange properties without needing to sell first. This makes it easier to upgrade, downsize, or change locations while keeping your value in property instead of rushing into cash sales.",
       },
@@ -41,7 +41,7 @@ const services: ServiceDropdown[] = [
       {
         title: "Lifestyle & Location Matching",
         description:
-          "We match people based on real life needs, not just numbers. Family size, location preferences, access needs, and future plans are all taken into account so the swap actually makes sense.",
+          "We match people based on real life needs, not just numbers. Family size, location preferences, access needs, and future plans are all taken into account so the Property  Trade-In actually makes sense.",
       },
       {
         title: "Cash Top-Ups When Needed",

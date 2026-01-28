@@ -44,7 +44,7 @@ export default function Hero() {
         <div className="grid lg:grid-cols-2 items-center h-full">
           <div className="space-y-6 sm:space-y-7 max-w-xl">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight drop-shadow-lg">
-              Property isn’t just a transaction <br />
+              Property isn’t just a transaction, <br />
               <span className="text-emerald-300">
                 It’s a life decision.
               </span>

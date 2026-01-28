@@ -13,7 +13,7 @@ import {
 const testimonials = [
   {
     name: "Grace Muthoni.",
-    service: "Property Trade-In & Swap",
+    service: "Property Trade-In Exchange",
     location: "Nairobi",
     avatar: User,
     rating: 5,
@@ -55,7 +55,7 @@ const testimonials = [
   },
   {
     name: "Jane Wambui.",
-    service: "Developer Property Swap",
+    service: "Developer Property Trade-In",
     location: "Nairobi",
     avatar: User,
     rating: 5,

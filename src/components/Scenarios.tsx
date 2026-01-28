@@ -17,7 +17,7 @@ export default function Scenarios() {
     {
       icon: Users,
       title: "Growing family? Need more space",
-      text: "You need a bigger home now. You can trade in your current house to someone who wants your place through us.",
+      text: "You need a bigger home now. You can  Trade-In your current house to someone who wants your place through us.",
       service: "Trade-In",
     },
     {
@@ -35,7 +35,7 @@ export default function Scenarios() {
     {
       icon: RefreshCcw,
       title: "Need a new home but want to stay invested",
-      text: "Move into a different property without exiting the market. Trade in your current home smoothly through us.",
+      text: "Move into a different property without exiting the market.  Trade-In your current home smoothly through us.",
       service: "Trade-In",
     },
     {
