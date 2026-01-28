@@ -136,8 +136,7 @@ export function PremiumTestimonials() {
                 initial="enter"
                 animate="center"
                 exit="exit"
-                transition={{ type: "spring", stiffness: 220, damping: 28 }}
-                className="absolute inset-0"
+                transition={{ type: "tween", duration: 1.5, ease: "easeInOut" }}                className="absolute inset-0"
               >
                 <div className="relative h-full rounded-3xl border border-slate-200 bg-white shadow-xl px-6 py-8 sm:px-10 sm:py-10">
 
