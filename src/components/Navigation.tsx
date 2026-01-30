@@ -55,8 +55,12 @@ export default function Navigation() {
             onClick={() => scrollToSection("hero")}
             className="flex items-center gap-3"
           >
-            <div className="bg-emerald-600 p-2.5 rounded-xl shadow-md">
-              <Home className="w-5 h-5 text-white" />
+            <div className="px-2 py-1 rounded-xl">
+              <img
+                src="/home.webp"
+                alt="Badilisha Properties"
+                className="h-18 w-auto object-contain"
+              />
             </div>
           </button>
 

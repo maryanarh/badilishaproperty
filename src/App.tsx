@@ -9,6 +9,7 @@ import Services1 from './components/Services1';
 import { PremiumTestimonials } from './components/Testimonialss';
 import ScrollProgressIndicator from "./components/ScrollProgressIndicator"
 import { ServiceDropdowns } from './components/ServiceDropdowns';
+import HowItWorks from  './components/HowItWorks';
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
       <About/>
       <Services1 />
       <ServiceDropdowns />
+      <HowItWorks />
       <Scenarios />
       <WhyChoose />
       <PremiumTestimonials />

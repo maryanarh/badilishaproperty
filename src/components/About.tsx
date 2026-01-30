@@ -36,13 +36,14 @@ export default function About() {
               <p>
                 Badilisha Properties Limited helps people move forward in life without losing the value they’ve worked so hard to build.
                 We started with a simple realization: when life changes, selling property often feels rushed, stressful, and costly.
-                Too many people walk away with less than they should. We believe there’s a better way
+                Too many people walk away with less than they should. We believe there’s a better way 
               </p>
 
               <p>
               We don’t see property as something you’re forced to sell under pressure. We see it as value you can adjust, trade,
-              or reshape to fit your next chapter. That mindset guides everything we do from how we value property to how we
-              hand it over so that decisions feel clear, fair, and made with people in mind.
+              or reshape to fit your next chapter. That mindset guides everything we do to make Property Ownership flexible.
+              Our Property TradeIn and Swap program allows clients to exchange their current property for another that better suits their lifestyle, financial
+              goals or family needs smoothly and conveniently   .
               </p>
             </div>
 

@@ -10,7 +10,8 @@ node_modules
 dist
 dist-ssr
 *.local
-mm.txt
+
+
 
 .vscode/*
 !.vscode/extensions.json
@@ -24,3 +25,5 @@ mm.txt
 .env
 .pre-commit-config.yaml
 AGENTS.md
+mm.txt
+Badilisha Properties Ltd.md
