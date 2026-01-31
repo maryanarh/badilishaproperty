@@ -25,7 +25,7 @@ export default function Hero() {
         relative
         min-h-[60vh] sm:min-h-[80vh] lg:min-h-[95vh]
         overflow-hidden
-        pt-16 pb-16 sm:pt-28 sm:pb-24
+        pt-16 pb-16 sm:pt-16 sm:pb-20
         text-white
         bg-no-repeat
         bg-cover
