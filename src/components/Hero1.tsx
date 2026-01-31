@@ -48,7 +48,7 @@ export default function Hero() {
               🇰🇪 Trusted by homeowners across Kenya
             </div>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight drop-shadow-lg">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight drop-shadow-lg">
               Stuck in a property that doesn't fit? <br />
               <span className="text-emerald-300">
                 Trade, swap, or sell with confidence.
