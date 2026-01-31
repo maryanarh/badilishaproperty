@@ -349,11 +349,11 @@ const MobileStoriesCarousel: React.FC<{
               onClick={() => onStorySelect(index)}
             >
               <div className="p-4 sm:p-5">
-                {/* Story preview only - No title */}
+                {/* Story preview only - Show TITLE instead of text */}
                 <div className="bg-white/10 backdrop-blur-sm rounded-lg sm:rounded-xl p-3 sm:p-4 min-h-[140px] sm:min-h-[160px] flex items-center justify-center">
-                  <p className="text-white/95 text-sm sm:text-base leading-relaxed line-clamp-5 sm:line-clamp-4">
-                    {story.steps[0].text}
-                  </p>
+                  <h3 className="text-white text-lg sm:text-xl font-bold text-center px-2 sm:px-4">
+                    {story.title}
+                  </h3>
                 </div>
                 
                 {/* Action hint - Mobile optimized */}
