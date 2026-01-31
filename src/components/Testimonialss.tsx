@@ -65,6 +65,59 @@ const testimonials = [
       "No long sales cycle",
       "Immediate reinvestment"
     ]
+  },
+  // New testimonials based on different stories
+  {
+    name: "Samuel Kamau",
+    service: "Agricultural Land Exchange",
+    location: "Limuru",
+    avatar: User,
+    rating: 5,
+    text: "My flower farming business needed expansion but I couldn't afford more land. Badilisha helped me trade my 2 acres for 5 acres in Thika, paying only Ksh 1.2M difference. My export business now has room to grow.",
+    results: [
+      "Business expansion",
+      "Affordable upgrade",
+      "Strategic location"
+    ]
+  },
+  {
+    name: "Grace Wanjiku",
+    service: "Retirement Property Trade",
+    location: "Westlands",
+    avatar: User,
+    rating: 5,
+    text: "After retiring, I wanted peaceful country living without market uncertainty. Badilisha swapped my city apartment for a charming 2-acre farmhouse in Naivasha and Ksh 800K cash. Now I enjoy gardening and fresh air.",
+    results: [
+      "Dream retirement",
+      "Cash surplus",
+      "Market risk avoided"
+    ]
+  },
+  {
+    name: "Mwangi Family",
+    service: "Commercial Property Exchange",
+    location: "Industrial Area",
+    avatar: User,
+    rating: 5,
+    text: "Our 10-acre commercial plot couldn't be subdivided for inheritance. Badilisha exchanged it for 4 separate titled plots in Karen plus Ksh 3M cash. Each child now has their own parcel.",
+    results: [
+      "Inheritance solved",
+      "Multiple titles",
+      "Cash surplus"
+    ]
+  },
+  {
+    name: "James Ochieng",
+    service: "Urban-Rural Property Swap",
+    location: "Kitengela",
+    avatar: User,
+    rating: 5,
+    text: "Working in Nairobi with property in Kitengela meant 4 hours of daily commuting. Badilisha swapped my rural property for a city apartment, cutting my commute to 15 minutes and giving me back family time.",
+    results: [
+      "Commute eliminated",
+      "Work-life balance",
+      "Urban convenience"
+    ]
   }
 ];
 

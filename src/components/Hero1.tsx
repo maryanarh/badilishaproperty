@@ -41,7 +41,7 @@ export default function Hero() {
 
       {/* CONTENT */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
-        <div className="grid lg:grid-cols-2 items-center h-full">
+        <div className="grid lg:grid-cols-2 items-start h-full">
           <div className="space-y-6 sm:space-y-7 max-w-xl">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight drop-shadow-lg">
               Property isn’t just a transaction, <br />

@@ -31,7 +31,7 @@ export default function HowItWorks() {
   return (
     <section
       id="how-it-works"
-      className="relative py-20 md:py-28 bg-gradient-to-br from-emerald-950 via-emerald-900 to-emerald-800"
+      className="relative py-18 md:py-26 bg-gradient-to-br from-emerald-950 via-emerald-900 to-emerald-800"
     >
       {/* Soft overlay for depth */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(52,211,153,0.15),transparent_60%)]" />

@@ -34,16 +34,16 @@ export default function About() {
             </h2>
             <div className="space-y-4 text-xl text-gray-700">
               <p>
-                Badilisha Properties Limited helps people move forward in life without losing the value they’ve worked so hard to build.
-                We started with a simple realization: when life changes, selling property often feels rushed, stressful, and costly.
-                Too many people walk away with less than they should. We believe there’s a better way 
+                At Badilisha Properties, we help you move forward in life while protecting the value you've built.
+                Traditional property sales often feel rushed and stressful, leaving many with less than they deserve.
+                We offer a smarter alternative.
               </p>
 
               <p>
-              We don’t see property as something you’re forced to sell under pressure. We see it as value you can adjust, trade,
-              or reshape to fit your next chapter. That mindset guides everything we do to make Property Ownership flexible.
-              Our Property TradeIn and Swap program allows clients to exchange their current property for another that better suits their lifestyle, financial
-              goals or family needs smoothly and conveniently   .
+                We see property not as a burden to sell, but as adaptable value that can evolve with your life.
+                Through our Property Trade-In and Swap program, you can exchange your current property for one that 
+                better fits your changing lifestyle, financial goals, or family needs all without the pressure of 
+                a traditional sale.
               </p>
             </div>
 
@@ -56,8 +56,9 @@ export default function About() {
             <h3 className="text-2xl font-bold">Our Mission</h3>
           </div>
           <p className="text-emerald-50 text-lg">
-          Our mission is to make property transitions straightforward and safe. We help homeowners move to what’s next through fair pricing,
-          smart property matching, and full legal support without rushing sales or putting long term value at risk.
+            To make property transitions straightforward and secure. We help homeowners move forward through 
+            fair valuations, intelligent property matching, and comprehensive legal support without compromising 
+            on value or forcing rushed decisions.
           </p>
         </div>
 
@@ -67,14 +68,13 @@ export default function About() {
             <h3 className="text-2xl font-bold">Our Vision</h3>
           </div>
           <p className="text-gray-200 text-lg">
-            We imagine a future where changing property is calm and predictable, not confusing or stressful.
-            A future where clear processes replace guesswork, and property ownership becomes a stepping stone to opportunity,
-            not a weight holding people back.
+            We envision a future where changing properties is a smooth, predictable process free from confusion 
+            and stress. A world where property ownership serves as a foundation for new opportunities, not a 
+            constraint holding people back.
           </p>
         </div>
       </div>
       </div>
-
 
           {/* <div className="mb-20">
             <div className="text-center mb-12">

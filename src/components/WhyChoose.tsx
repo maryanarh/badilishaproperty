@@ -76,7 +76,7 @@ export default function WhyChoose() {
   return (
     <section
       id="why-choose"
-      className="relative overflow-hidden py-20 md:py-28"
+      className="relative overflow-hidden py-6 md:py-14"
     >
       {/* === STABLE GRADIENT BACKGROUND === */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#e6f4ee] via-[#d9efe7] to-[#c7e6da]" />
