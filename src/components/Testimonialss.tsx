@@ -169,7 +169,7 @@ export function PremiumTestimonials() {
       <div className="max-w-6xl mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-3">
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-3">
             Real Stories. Real Moves.
           </h2>
           <p className="text-slate-600 max-w-xl mx-auto">

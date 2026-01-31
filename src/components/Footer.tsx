@@ -25,7 +25,7 @@ export default function Footer() {
               </div>
               <div>
                 <h3 className="text-white font-bold">Badilisha Properties Ltd</h3>
-                <p className="text-xs text-gray-400">Property Transitions Reimagined</p>
+                
               </div>
             </div>
             <p className="text-sm text-gray-400 mb-4">
