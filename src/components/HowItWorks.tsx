@@ -7,7 +7,9 @@ export default function HowItWorks() {
       number: '01',
       title: 'How It Works',
       description:
-        'You register your property and specify your interests, and our algorithm immediately begins searching for the perfect match. If no match is available, your listing automatically stays in the queue and is matched the moment a suitable property is uploaded.',
+          `You simply register your property and tell us what you're looking for. 
+          Our system immediately starts searching for the perfect match. 
+          If we don't find one right away, don't worry—your listing stays active until the right property becomes available.`,
       details: [
         'Register your property once and set preferences',
         'Algorithmic matching begins immediately',
@@ -19,11 +21,12 @@ export default function HowItWorks() {
       number: '02',
       title: 'Value Difference Settlement',
       description:
-        'Flexible financial balancing to make every swap possible — fair, transparent, and without pressure.',
+        `We handle any price differences fairly and transparently, making swaps possible without pressure.
+         This flexible approach ensures everyone gets what they need.`,
       details: [
-        'If your property is worth more, you receive the difference',
-        'If it’s worth less, you top up the difference',
-        'Zero pressure to find a “perfect” match',
+        'If your property is worth more → you receive the difference',
+        `If it's worth less → you top up the difference`,
+        'No pressure for a "perfect" match',
       ],
     },
   ];
@@ -43,7 +46,7 @@ export default function HowItWorks() {
             How It Works
           </h2>
           <p className="text-lg md:text-xl text-emerald-100/80 max-w-3xl mx-auto">
-            Simple, transparent steps that let you trade-in or swap properties with confidence.
+            Simple and transparent steps that lets you Trade-in or Swap properties with confidence.
           </p>
         </div>
 
