@@ -43,10 +43,15 @@ export default function Hero() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
         <div className="grid lg:grid-cols-2 items-start h-full">
           <div className="space-y-6 sm:space-y-7 max-w-xl">
+            {/* MOVED: Trust Badge to the top */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-sm font-medium text-emerald-200 shadow-sm">
+              🇰🇪 Trusted by homeowners across Kenya
+            </div>
+
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight drop-shadow-lg">
-              Property isn’t just a transaction, <br />
+              Stuck in a property that doesn't fit? <br />
               <span className="text-emerald-300">
-                It’s a life decision.
+                Trade, swap, or sell with confidence.
               </span>
             </h1>
 
@@ -59,7 +64,7 @@ export default function Hero() {
             <p className="text-base sm:text-lg text-white/90 drop-shadow">
               We start with where you’re going, not just what you’re selling.
               Badilisha bridges you to your next home through a smarter,
-              calmer transition.  
+              calmer transition.
             </p>
 
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-sm font-medium text-emerald-200 shadow-sm">
@@ -83,10 +88,26 @@ export default function Hero() {
                 <span>Talk to Us</span>
               </button>
             </div>
+
+            {/* ADDED: Serving line with a top border (just this) */}
+            <div className="pt-6 border-t border-white/10">
+              <p className="text-sm text-white/70">
+                Serving homeowners, families, and developers across Kenya
+              </p>
+            </div>
           </div>
+
+          {/* Right column left empty intentionally (same as original) */}
+          <div />
+        </div>
+      </div>
+
+      {/* Scroll Indicator (cursor) added at bottom center */}
+      <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2">
+        <div className="animate-bounce w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
+          <div className="w-1 h-3 bg-white/50 rounded-full mt-2"></div>
         </div>
       </div>
     </section>
   )
 }
- 
