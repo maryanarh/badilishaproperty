@@ -2,11 +2,12 @@
 
 import type React from "react"
 import { useState } from "react"
-import { RefreshCw, Banknote, Award, ChevronUp } from "lucide-react"
+import { RefreshCw, Banknote, Award, ChevronUp, Home, MapPin, FileText, Users, Scale, Building } from "lucide-react"
 
 interface SubCategory {
   title: string
   description: string
+  icon: React.ReactNode
 }
 
 interface ServiceDropdown {
@@ -23,120 +24,80 @@ const services: ServiceDropdown[] = [
   {
     id: "trade-in-dropdown",
     theme: "emerald",
-    icon: <RefreshCw className="h-5 w-5 text-emerald-700" />,
-    iconBg: "bg-emerald-100",
-    title: "Property Trade-In and Exchange",
-    subtitle: "Trade-In one property for another",
+    icon: <RefreshCw className="h-6 w-6 text-emerald-700" />,
+    iconBg: "bg-gradient-to-br from-emerald-100 to-emerald-50 border border-emerald-200",
+    title: "Property Trade-In",
+    subtitle: "Swap your property for one that fits you better",
     subcategories: [
       {
-        title: "Direct Property Trade-In",
-        description:
-          "We help property owners exchange properties without needing to sell first. This makes it easier to upgrade, downsize, or change locations while keeping your value in property instead of rushing into cash sales.",
+        title: "Need More or Less Space?",
+        description: "Your family is growing or your kids have moved out? Trade your current house for a bigger or smaller one. No need to sell first—just swap and move.",
+        icon: <Home className="h-5 w-5 text-emerald-600" />
       },
       {
-        title: "Fair Property Valuation",
-        description:
-          "Each property is valued using current market data by independent professionals. This keeps the exchange fair for everyone involved and removes guesswork from the process.",
+        title: "Want to Change Location?",
+        description: "Move from city to countryside, or countryside to city. We find someone who wants your property and has what you're looking for. It's that simple.",
+        icon: <MapPin className="h-5 w-5 text-emerald-600" />
       },
       {
-        title: "Lifestyle & Location Matching",
-        description:
-          "We match people based on real life needs, not just numbers. Family size, location preferences, access needs, and future plans are all taken into account so the Property  Trade-In actually makes sense.",
+        title: "Need Cash from Your Property?",
+        description: "Get money from your home without selling it. Trade your house for a cheaper one and get the difference in cash. Use it for business, bills, or anything else.",
+        icon: <Banknote className="h-5 w-5 text-emerald-600" />
       },
       {
-        title: "Cash Top-Ups When Needed",
-        description:
-          "If property values don’t match exactly, we clearly structure cash top-ups or payouts. Everything is agreed upfront and written down, so there are no surprises later.",
-      },
-      {
-        title: "Coordinated Move Timelines",
-        description:
-          "All owners move on a shared timeline. This avoids delays, uncertainty, or one party being left waiting while another moves ahead.",
-      },
-      {
-        title: "Legal & Ownership Transfer",
-        description:
-          "We handle due diligence, agreements, and title transfers from start to finish. The legal work is managed centrally so owners can focus on moving forward, not paperwork.",
+        title: "We Handle the Paperwork",
+        description: "We take care of all the legal stuff and moving plans. You focus on packing—we handle contracts, titles, and making sure everyone moves at the right time.",
+        icon: <FileText className="h-5 w-5 text-emerald-600" />
       },
     ],
   },
   {
     id: "property-sale-dropdown",
     theme: "blue",
-    icon: <Banknote className="h-5 w-5 text-blue-700" />,
-    iconBg: "bg-blue-100",
+    icon: <Scale className="h-6 w-6 text-blue-700" />,
+    iconBg: "bg-gradient-to-br from-blue-100 to-blue-50 border border-blue-200",
     title: "Property Sale",
-    subtitle: "Sell clearly and confidently",
+    subtitle: "Sell your property clearly and quickly",
     subcategories: [
       {
-        title: "Realistic Pricing",
-        description:
-          "We help set prices based on real market value, not pressure or guesswork. This avoids underpricing while also preventing listings that sit for too long.",
+        title: "Direct Sale to Real Buyers",
+        description: "We connect you with people who are ready to buy now. No waiting for months on the market—just serious buyers who want your property.",
+        icon: <Users className="h-5 w-5 text-blue-600" />
       },
       {
-        title: "Buyer Screening",
-        description:
-          "Only serious and financially ready buyers are introduced. This reduces failed deals and saves time for everyone involved.",
+        title: "Should You Sell or Swap?",
+        description: "Not sure what's better for you? We'll look at your situation and tell you honestly whether selling or swapping makes more sense for your goals.",
+        icon: <RefreshCw className="h-5 w-5 text-blue-600" />
       },
       {
-        title: "Faster Buyer Matching",
-        description:
-          "We prioritize buyers who are ready to move forward. This helps speed up sales when timing matters, without cutting corners.",
-      },
-      {
-        title: "Clear Fees & Costs",
-        description:
-          "All fees and costs are explained before you commit. There are no hidden charges added at the end of the process.",
-      },
-      {
-        title: "Sell vs Trade-In Advice",
-        description:
-          "We help you decide whether selling or trading in is the better option before anything is listed. The right choice depends on your goals, not assumptions.",
-      },
-      {
-        title: "End-to-End Sale Handling",
-        description:
-          "From accepting an offer to transferring the title, we manage the entire sale as one smooth process. Payments, legal steps, and registration are handled cleanly.",
+        title: "We Handle Everything",
+        description: "From start to finish, we manage the whole sale. We deal with the paperwork, buyer meetings, and final handover so you don't have to stress.",
+        icon: <FileText className="h-5 w-5 text-blue-600" />
       },
     ],
   },
   {
     id: "subdivision-dropdown",
     theme: "amber",
-    icon: <Award className="h-5 w-5 text-amber-700" />,
-    iconBg: "bg-amber-100",
-    title: "Subdivision & Registration",
-    subtitle: "Unlock land value safely",
+    icon: <Building className="h-6 w-6 text-amber-700" />,
+    iconBg: "bg-gradient-to-br from-amber-100 to-amber-50 border border-amber-200",
+    title: "Land Subdivision",
+    subtitle: "Divide your land and unlock its value",
     subcategories: [
       {
-        title: "Land Feasibility Check",
-        description:
-          "We first confirm whether subdivision makes sense legally and financially. This prevents breaking land into pieces that reduce long-term value.",
+        title: "Check if It's Possible",
+        description: "We check if your land can be divided legally. Then we make a plan that makes the most sense for you and follows all the rules.",
+        icon: <Award className="h-5 w-5 text-amber-600" />
       },
       {
-        title: "Subdivision Planning",
-        description:
-          "Surveyors and planners design the subdivision correctly from the start. Layouts follow regulations and are practical for future use.",
+        title: "Handle All Approvals",
+        description: "We do all the running around with the county offices. We get the surveys done, submit the paperwork, and get the new titles for each piece of land.",
+        icon: <FileText className="h-5 w-5 text-amber-600" />
       },
       {
-        title: "County Approvals",
-        description:
-          "We support the process through county and regulatory approvals. Paperwork, follow-ups, and compliance are handled step by step.",
-      },
-      {
-        title: "New Title Creation",
-        description:
-          "Each subdivided portion gets a clean, legally registered title. This makes future sales, transfers, or financing straightforward.",
-      },
-      {
-        title: "Partial Land Release",
-        description:
-          "You can unlock value from part of your land while keeping the rest. This allows access to capital without giving up full ownership.",
-      },
-      {
-        title: "Inheritance-Ready Structuring",
-        description:
-          "Titles are structured to reduce future family disputes. Clear boundaries and documentation help protect land as a long-term family asset.",
+        title: "For Families or Selling Part",
+        description: "Perfect for inherited land or when you want to sell just part. We divide the land so each family member gets their piece, or you can sell some and keep the rest.",
+        icon: <Users className="h-5 w-5 text-amber-600" />
       },
     ],
   },
@@ -147,15 +108,21 @@ export function ServiceDropdowns() {
   const [openSub, setOpenSub] = useState<string | null>(null)
 
   const themeSurface = {
-    emerald: "bg-emerald-50/80",
-    blue: "bg-blue-50/80",
-    amber: "bg-amber-50/80",
+    emerald: "bg-gradient-to-b from-emerald-50/90 to-white",
+    blue: "bg-gradient-to-b from-blue-50/90 to-white",
+    amber: "bg-gradient-to-b from-amber-50/90 to-white",
+  }
+
+  const themeHeader = {
+    emerald: "bg-gradient-to-r from-emerald-50 to-emerald-100/50 border-emerald-200",
+    blue: "bg-gradient-to-r from-blue-50 to-blue-100/50 border-blue-200",
+    amber: "bg-gradient-to-r from-amber-50 to-amber-100/50 border-amber-200",
   }
 
   const themeBorder = {
-    emerald: "bg-emerald-400",
-    blue: "bg-blue-400",
-    amber: "bg-amber-400",
+    emerald: "border-emerald-300",
+    blue: "border-blue-300",
+    amber: "border-amber-300",
   }
 
   const themeText = {
@@ -164,114 +131,133 @@ export function ServiceDropdowns() {
     amber: "text-amber-800",
   }
 
-  const themeDot = {
+  const themeBg = {
     emerald: "bg-emerald-500",
     blue: "bg-blue-500",
     amber: "bg-amber-500",
   }
 
+  const themeAccent = {
+    emerald: "bg-emerald-100 border-emerald-200",
+    blue: "bg-blue-100 border-blue-200",
+    amber: "bg-amber-100 border-amber-200",
+  }
+
   return (
-    <div className="space-y-8 max-w-5xl mx-auto pb-20 px-4">
+    <div className="space-y-6 max-w-6xl mx-auto pb-20 px-4">
       {services.map((service) => {
         const isServiceOpen = openService === service.id
 
         return (
           <div
             key={service.id}
-            className={`border transition-all duration-300 ${
+            className={`border transition-all duration-500 overflow-hidden ${
               isServiceOpen
-                ? `rounded-3xl shadow-xl ${themeSurface[service.theme]}`
-                : "rounded-2xl bg-white shadow-md hover:shadow-lg"
+                ? `rounded-3xl shadow-2xl ${themeSurface[service.theme]} ring-2 ring-opacity-20 ${themeBorder[service.theme]}`
+                : "rounded-2xl bg-gradient-to-br from-white to-gray-50 shadow-lg hover:shadow-xl border-gray-200"
             }`}
           >
             <div
               onClick={() => setOpenService(isServiceOpen ? null : service.id)}
-              className="flex items-center gap-4 p-6 cursor-pointer"
+              className={`flex items-center gap-5 p-7 cursor-pointer transition-all duration-300 ${
+                isServiceOpen
+                  ? `${themeHeader[service.theme]} border-b ${themeBorder[service.theme]}`
+                  : "hover:bg-gray-50/80"
+              }`}
             >
               <div
-                className={`h-12 w-12 rounded-xl flex items-center justify-center ${service.iconBg}`}
+                className={`h-14 w-14 rounded-2xl flex items-center justify-center ${service.iconBg} shadow-sm`}
               >
                 {service.icon}
               </div>
 
               <div className="flex-1">
-                <h3 className="font-semibold text-neutral-900 text-lg">
+                <h3 className="font-bold text-gray-900 text-xl md:text-2xl">
                   {service.title}
                 </h3>
                 {!isServiceOpen && (
-                  <p className="text-sm text-neutral-500">{service.subtitle}</p>
+                  <p className="text-sm text-gray-600 mt-1.5">{service.subtitle}</p>
                 )}
               </div>
 
-              <ChevronUp
-                className={`h-5 w-5 text-neutral-400 transition-transform ${
-                  isServiceOpen ? "rotate-0" : "rotate-180"
-                }`}
-              />
+              <div className="flex items-center gap-3">
+                <span className={`text-xs font-semibold px-3 py-1 rounded-full ${themeAccent[service.theme]}`}>
+                  {service.subcategories.length} options
+                </span>
+                <ChevronUp
+                  className={`h-6 w-6 transition-all duration-500 ${
+                    isServiceOpen
+                      ? "text-gray-700 rotate-180 transform"
+                      : "text-gray-500 rotate-0"
+                  }`}
+                />
+              </div>
             </div>
 
             {isServiceOpen && (
-              <div className="px-6 pb-8 space-y-4">
-                {service.subcategories.map((sub) => {
-                  const key = `${service.id}-${sub.title}`
-                  const isOpen = openSub === key
+              <div className="px-7 pb-8 pt-2">
+                <div className="mb-6 pt-4">
+                  <h4 className="font-semibold text-gray-700 mb-3 text-lg">How can we help you?</h4>
+                  <div className="h-1 w-20 rounded-full bg-gradient-to-r from-gray-300 to-transparent"></div>
+                </div>
+                
+                <div className="space-y-4">
+                  {service.subcategories.map((sub) => {
+                    const key = `${service.id}-${sub.title}`
+                    const isOpen = openSub === key
 
-                  return (
-                    <div
-                      key={sub.title}
-                      className={`rounded-xl transition-all ${
-                        isOpen
-                          ? `bg-white shadow-md`
-                          : `${themeSurface[service.theme]} hover:brightness-95`
-                      }`}
-                    >
-                      <button
-                        onClick={() => setOpenSub(isOpen ? null : key)}
-                        className="w-full flex justify-between items-start gap-4 p-4 text-left
-                                   outline-none focus:outline-none focus:ring-0
-                                   focus-visible:outline-none focus-visible:ring-0"
+                    return (
+                      <div
+                        key={sub.title}
+                        className={`rounded-2xl transition-all duration-400 overflow-hidden border ${
+                          isOpen
+                            ? `${themeBorder[service.theme]} bg-white shadow-lg ring-2 ring-opacity-10 ${themeBorder[service.theme]}`
+                            : `${themeAccent[service.theme]} hover:shadow-md`
+                        }`}
                       >
-                        <div className="flex-1">
-                          <div className="flex items-center gap-3">
-                            {/* small colored dot to give life to each option */}
-                            <span
-                              className={`inline-block h-2 w-2 rounded-full ${themeDot[service.theme]}`}
-                              aria-hidden
-                            />
-                            <span
-                              className={`font-medium ${
-                                isOpen
-                                  ? themeText[service.theme]
-                                  : `${themeText[service.theme]} text-opacity-80`
-                              }`}
-                            >
-                              {sub.title}
-                            </span>
+                        <button
+                          onClick={() => setOpenSub(isOpen ? null : key)}
+                          className="w-full flex justify-between items-start gap-4 p-5 text-left
+                                     outline-none focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-opacity-30"
+                        >
+                          <div className="flex items-start gap-4">
+                            <div className={`p-2.5 rounded-lg ${themeAccent[service.theme]}`}>
+                              {sub.icon}
+                            </div>
+                            <div className="flex-1 text-left">
+                              <h5 className={`font-semibold mb-1.5 ${themeText[service.theme]}`}>
+                                {sub.title}
+                              </h5>
+                              {!isOpen && (
+                                <p className="text-sm text-gray-600 line-clamp-2">
+                                  {sub.description}
+                                </p>
+                              )}
+                            </div>
                           </div>
 
-                          {/* subtle divider between title and description (visible when open) */}
-                          {isOpen && (
-                            <div
-                              className={`mt-4 h-px ${themeBorder[service.theme]} opacity-60`}
+                          <div className="flex flex-col items-end gap-2">
+                            <ChevronUp
+                              className={`h-4 w-4 transition-transform duration-300 ${
+                                isOpen ? "rotate-0 text-gray-700" : "rotate-180 text-gray-500"
+                              }`}
                             />
-                          )}
-                        </div>
+                            <div className={`h-1.5 w-1.5 rounded-full ${isOpen ? themeBg[service.theme] : "bg-gray-300"}`}></div>
+                          </div>
+                        </button>
 
-                        <ChevronUp
-                          className={`h-4 w-4 transition-transform ${
-                            isOpen ? "rotate-0" : "rotate-180"
-                          }`}
-                        />
-                      </button>
-
-                      {isOpen && (
-                        <div className="px-6 pb-6 text-sm text-neutral-700 leading-relaxed max-w-3xl">
-                          {sub.description}
-                        </div>
-                      )}
-                    </div>
-                  )
-                })}
+                        {isOpen && (
+                          <div className="px-5 pb-6">
+                            <div className={`h-px w-full mb-5 opacity-30 ${themeBg[service.theme]}`}></div>
+                            <div className="text-gray-700 leading-relaxed pl-1.5">
+                              {sub.description}
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    )
+                  })}
+                </div>
               </div>
             )}
           </div>

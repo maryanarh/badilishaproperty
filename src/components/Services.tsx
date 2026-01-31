@@ -44,7 +44,7 @@ export default function Services() {
     type: 'sale',
     images: [
       '/house.webp',
-      '/sale.jpg'
+      '/sale.webp'
     ],
     alt: 'Property sale process showing listing and completion',
     iconColor: 'text-blue-600',
@@ -124,7 +124,6 @@ export default function Services() {
             const IconComponent = getServiceIcon(service.type);
             const iconClass = getIconClass(service.type);
             const iconBgColor = getIconBgColor(service.type);
-            
             return (
               <div
                 key={index}
@@ -133,8 +132,8 @@ export default function Services() {
                 <div className="h-56 overflow-hidden relative">
                   {service.images && service.images.length > 1 ? (
                     <div className="grid grid-cols-2 h-full gap-0.5 bg-white">
-                      <img 
-                        src={service.images[0]} 
+                      <img
+                        src={service.images[0]}
                         alt={`${service.title} - Step 1`}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                         loading="lazy"
@@ -142,8 +141,8 @@ export default function Services() {
                       <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 ${iconBgColor} p-2 rounded-full shadow-lg border-2 border-white`}>
                         <IconComponent className={`${iconClass} animate-spin-slow`} />
                       </div>
-                      <img 
-                        src={service.images[1]} 
+                      <img
+                        src={service.images[1]}
                         alt={`${service.title} - Step 2`}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                         loading="lazy"

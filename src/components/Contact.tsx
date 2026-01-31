@@ -6,7 +6,8 @@ import {
   Instagram,
   Facebook,
   Twitter,
-  Linkedin
+  Linkedin,
+  Clock
 } from 'lucide-react';
 
 const WHATSAPP_NUMBER = import.meta.env.VITE_WHATSAPP_NUMBER;
@@ -45,7 +46,7 @@ export default function Contact() {
 
     try {
       if (supabase) {
-        const { data, error: submitError } = await supabase
+        const { error: submitError } = await supabase
           .from('contact_inquiries')
           .insert([{
             full_name: formData.full_name,
@@ -116,7 +117,7 @@ export default function Contact() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
-            Let’s Talk About Your Property
+            Let's Talk About Your Property
           </h2>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
             No pressure. Just clear options and honest guidance.
@@ -170,6 +171,35 @@ export default function Contact() {
                 <MessageCircle className="w-5 h-5" />
                 Chat on WhatsApp
               </a>
+            </div>
+
+            {/* Added Office Hours Section */}
+            <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="p-2 bg-emerald-100 rounded-lg">
+                  <Clock className="w-5 h-5 text-emerald-600" />
+                </div>
+                <h4 className="font-bold text-slate-900">Office Hours</h4>
+              </div>
+              <div className="space-y-2">
+                <div className="flex justify-between items-center">
+                  <span className="text-slate-600 text-sm">Monday - Friday</span>
+                  <span className="font-medium text-slate-900">9:00 AM - 5:00 PM</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-slate-600 text-sm">Saturday</span>
+                  <span className="font-medium text-slate-900">9:00 AM - 1:00 PM</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-slate-600 text-sm">Sunday</span>
+                  <span className="font-medium text-slate-900">Closed</span>
+                </div>
+              </div>
+              <div className="mt-4 pt-4 border-t border-slate-100">
+                <p className="text-sm text-slate-500">
+                  WhatsApp available 24/7 for urgent inquiries
+                </p>
+              </div>
             </div>
 
             <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">

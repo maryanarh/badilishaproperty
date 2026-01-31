@@ -3,17 +3,7 @@ import { RefreshCw, Banknote, Award } from 'lucide-react'
 type ServiceType = 'Trade-In and Exchange' | 'sale' | 'subdivision'
 
 export default function Services() {
-  const services: {
-    icon: typeof RefreshCw
-    title: string
-    benefit: string
-    bullets: string[]
-    type: ServiceType
-    images: string[]
-    alt: string
-    accent: string
-    softBg: string
-  }[] = [
+  const services = [
     {
       icon: RefreshCw,
       title: 'Property Trade-In and Exchange',
@@ -29,6 +19,7 @@ export default function Services() {
       alt: 'Property Trade-In and Exchange illustration with two distinct homes',
       accent: 'bg-emerald-600',
       softBg: 'bg-emerald-50',
+      glow: 'from-emerald-400/20 via-emerald-300/10 to-transparent',
     },
     {
       icon: Banknote,
@@ -41,10 +32,11 @@ export default function Services() {
         'Faster settlement options available',
       ],
       type: 'sale',
-      images: ['/house.webp', '/sale.jpg'],
+      images: ['/house.webp', '/sale.webp'],
       alt: 'Property sale process showing listing and completion',
       accent: 'bg-blue-600',
       softBg: 'bg-blue-50',
+      glow: 'from-blue-400/20 via-blue-300/10 to-transparent',
     },
     {
       icon: Award,
@@ -60,6 +52,7 @@ export default function Services() {
       alt: 'Land subdivision and registration documents',
       accent: 'bg-amber-600',
       softBg: 'bg-amber-50',
+      glow: 'from-amber-400/20 via-amber-300/10 to-transparent',
     },
   ]
 
@@ -93,6 +86,17 @@ export default function Services() {
                     group-hover:shadow-2xl
                   `}
                 >
+                  {/* RIGHT-SIDE HOVER GLOW (ported from Stories logic) */}
+                  <div
+                    className={`
+                      absolute inset-0
+                      opacity-0 group-hover:opacity-100
+                      transition-opacity duration-300
+                      bg-gradient-to-l ${service.glow}
+                      pointer-events-none
+                    `}
+                  />
+
                   {/* Image */}
                   <div className="relative h-56 overflow-hidden rounded-t-3xl">
                     <div className="grid grid-cols-2 h-full">
@@ -103,7 +107,6 @@ export default function Services() {
                         loading="lazy"
                       />
 
-                      {/* Center icon */}
                       <div
                         className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 ${service.accent} p-4 rounded-2xl shadow-xl border-4 border-white transition-transform duration-300 group-hover:scale-110`}
                       >
@@ -120,7 +123,7 @@ export default function Services() {
                   </div>
 
                   {/* Content */}
-                  <div className="flex flex-col flex-grow p-8 bg-white/70 backdrop-blur-sm rounded-b-3xl">
+                  <div className="relative flex flex-col flex-grow p-8 bg-white/70 backdrop-blur-sm rounded-b-3xl">
                     <div
                       className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-6 ${service.softBg} transition-transform duration-300 group-hover:scale-110`}
                     >
@@ -137,10 +140,7 @@ export default function Services() {
 
                     <ul className="space-y-4">
                       {service.bullets.map((bullet, idx) => (
-                        <li
-                          key={idx}
-                          className="flex items-start gap-3 text-slate-600"
-                        >
+                        <li key={idx} className="flex items-start gap-3 text-slate-600">
                           <div
                             className={`w-5 h-5 rounded-full flex items-center justify-center ${service.accent} flex-shrink-0 mt-0.5`}
                           >

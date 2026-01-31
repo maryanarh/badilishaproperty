@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Menu, X, Home } from "lucide-react"
+import { Menu, X } from "lucide-react"
 
 export default function Navigation() {
   const [isScrolledPastHero, setIsScrolledPastHero] = useState(false)
@@ -55,13 +55,13 @@ export default function Navigation() {
             onClick={() => scrollToSection("hero")}
             className="flex items-center gap-3"
           >
-            <div className="px-2 py-1 rounded-xl">
+            {<div className="px-2 py-1 rounded-xl">
               <img
                 src="/home.webp"
                 alt="Badilisha Properties"
-                className="h-18 w-auto object-contain"
+                className="h-12 w-auto object-contain"
               />
-            </div>
+            </div>}
           </button>
 
           {/* Centered Nav */}
