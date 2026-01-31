@@ -136,7 +136,7 @@ export function PremiumTestimonials() {
 
   const slide = {
     enter: (d: number) => ({
-      x: d > 0 ? 200 : -200,
+      x: d > 0 ? 140 : -140,
       opacity: 0,
       scale: 0.96
     }),
@@ -188,7 +188,12 @@ export function PremiumTestimonials() {
                 initial="enter"
                 animate="center"
                 exit="exit"
-                transition={{ type: "tween", duration: 0.5, ease: "easeInOut" }}
+                transition={{
+                              type: "spring",
+                              stiffness: 50,
+                              damping: 20,
+                              mass: 1.2
+                            }}
                 className="absolute inset-0"
               >
                 <div className="h-full rounded-2xl border border-slate-200 bg-white shadow-lg overflow-hidden">

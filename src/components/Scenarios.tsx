@@ -449,19 +449,19 @@ const StatsSection = () => {
   const stats = [
     {
       icon: <Star className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 text-amber-500" />,
-      value: "5+",
-      label: "year of experience",
+      value: "7+",
+      label: "Years Of Experience",
       description: "Trusted expertise in property solutions"
     },
     {
       icon: <Users className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 text-emerald-500" />,
-      value: "73+",
-      label: "happy customers",
+      value: "83+",
+      label: "Happy Customers",
       description: "Families and individuals served"
     },
     {
       icon: <HomeIcon className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 text-blue-500" />,
-      value: "35+",
+      value: "55+",
       label: "Properties Exchanged",
       description: "Successful swaps and trades"
     }
