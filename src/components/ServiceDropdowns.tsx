@@ -144,7 +144,7 @@ export function ServiceDropdowns() {
   }
 
   return (
-    <div className="space-y-6 max-w-6xl mx-auto pb-20 px-4">
+    <div className="space-y-4 sm:space-y-6 max-w-6xl mx-auto pb-12 sm:pb-20 px-3 sm:px-4">
       {services.map((service) => {
         const isServiceOpen = openService === service.id
 
@@ -153,39 +153,41 @@ export function ServiceDropdowns() {
             key={service.id}
             className={`border transition-all duration-500 overflow-hidden ${
               isServiceOpen
-                ? `rounded-3xl shadow-2xl ${themeSurface[service.theme]} ring-2 ring-opacity-20 ${themeBorder[service.theme]}`
-                : "rounded-2xl bg-gradient-to-br from-white to-gray-50 shadow-lg hover:shadow-xl border-gray-200"
+                ? `rounded-xl sm:rounded-3xl shadow-lg sm:shadow-2xl ${themeSurface[service.theme]} ring-1 sm:ring-2 ring-opacity-20 ${themeBorder[service.theme]}`
+                : "rounded-xl sm:rounded-2xl bg-gradient-to-br from-white to-gray-50 shadow-md sm:shadow-lg hover:shadow-xl border-gray-200"
             }`}
           >
             <div
               onClick={() => setOpenService(isServiceOpen ? null : service.id)}
-              className={`flex items-center gap-5 p-7 cursor-pointer transition-all duration-300 ${
+              className={`flex items-center gap-3 sm:gap-5 p-4 sm:p-7 cursor-pointer transition-all duration-300 ${
                 isServiceOpen
                   ? `${themeHeader[service.theme]} border-b ${themeBorder[service.theme]}`
                   : "hover:bg-gray-50/80"
               }`}
             >
               <div
-                className={`h-14 w-14 rounded-2xl flex items-center justify-center ${service.iconBg} shadow-sm`}
+                className={`h-10 w-10 sm:h-14 sm:w-14 rounded-xl sm:rounded-2xl flex items-center justify-center ${service.iconBg} shadow-sm flex-shrink-0`}
               >
                 {service.icon}
               </div>
 
-              <div className="flex-1">
-                <h3 className="font-bold text-gray-900 text-xl md:text-2xl">
+              <div className="flex-1 min-w-0">
+                <h3 className="font-bold text-gray-900 text-lg sm:text-xl md:text-2xl truncate">
                   {service.title}
                 </h3>
                 {!isServiceOpen && (
-                  <p className="text-sm text-gray-600 mt-1.5">{service.subtitle}</p>
+                  <p className="text-xs sm:text-sm text-gray-600 mt-1 truncate">
+                    {service.subtitle}
+                  </p>
                 )}
               </div>
 
-              <div className="flex items-center gap-3">
-                <span className={`text-xs font-semibold px-3 py-1 rounded-full ${themeAccent[service.theme]}`}>
+              <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
+                <span className={`text-xs font-semibold px-2 py-1 sm:px-3 sm:py-1 rounded-full ${themeAccent[service.theme]}`}>
                   {service.subcategories.length} options
                 </span>
                 <ChevronUp
-                  className={`h-6 w-6 transition-all duration-500 ${
+                  className={`h-4 w-4 sm:h-6 sm:w-6 transition-all duration-500 ${
                     isServiceOpen
                       ? "text-gray-700 rotate-180 transform"
                       : "text-gray-500 rotate-0"
@@ -195,13 +197,13 @@ export function ServiceDropdowns() {
             </div>
 
             {isServiceOpen && (
-              <div className="px-7 pb-8 pt-2">
-                <div className="mb-6 pt-4">
-                  <h4 className="font-semibold text-gray-700 mb-3 text-lg">How can we help you?</h4>
-                  <div className="h-1 w-20 rounded-full bg-gradient-to-r from-gray-300 to-transparent"></div>
+              <div className="px-4 sm:px-7 pb-6 sm:pb-8 pt-2">
+                <div className="mb-4 sm:mb-6 pt-2 sm:pt-4">
+                  <h4 className="font-semibold text-gray-700 mb-2 sm:mb-3 text-base sm:text-lg">How can we help you?</h4>
+                  <div className="h-1 w-16 sm:w-20 rounded-full bg-gradient-to-r from-gray-300 to-transparent"></div>
                 </div>
                 
-                <div className="space-y-4">
+                <div className="space-y-3 sm:space-y-4">
                   {service.subcategories.map((sub) => {
                     const key = `${service.id}-${sub.title}`
                     const isOpen = openSub === key
@@ -209,36 +211,36 @@ export function ServiceDropdowns() {
                     return (
                       <div
                         key={sub.title}
-                        className={`rounded-2xl transition-all duration-400 overflow-hidden border ${
+                        className={`rounded-xl sm:rounded-2xl transition-all duration-400 overflow-hidden border ${
                           isOpen
-                            ? `${themeBorder[service.theme]} bg-white shadow-lg ring-2 ring-opacity-10 ${themeBorder[service.theme]}`
-                            : `${themeAccent[service.theme]} hover:shadow-md`
+                            ? `${themeBorder[service.theme]} bg-white shadow-md sm:shadow-lg ring-1 sm:ring-2 ring-opacity-10 ${themeBorder[service.theme]}`
+                            : `${themeAccent[service.theme]} hover:shadow-sm sm:hover:shadow-md`
                         }`}
                       >
                         <button
                           onClick={() => setOpenSub(isOpen ? null : key)}
-                          className="w-full flex justify-between items-start gap-4 p-5 text-left
+                          className="w-full flex justify-between items-start gap-3 sm:gap-4 p-3 sm:p-5 text-left
                                      outline-none focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-opacity-30"
                         >
-                          <div className="flex items-start gap-4">
-                            <div className={`p-2.5 rounded-lg ${themeAccent[service.theme]}`}>
+                          <div className="flex items-start gap-3 sm:gap-4">
+                            <div className={`p-2 sm:p-2.5 rounded-lg ${themeAccent[service.theme]} flex-shrink-0`}>
                               {sub.icon}
                             </div>
-                            <div className="flex-1 text-left">
-                              <h5 className={`font-semibold mb-1.5 ${themeText[service.theme]}`}>
+                            <div className="flex-1 text-left min-w-0">
+                              <h5 className={`font-semibold mb-1 sm:mb-1.5 text-sm sm:text-base ${themeText[service.theme]} line-clamp-2`}>
                                 {sub.title}
                               </h5>
                               {!isOpen && (
-                                <p className="text-sm text-gray-600 line-clamp-2">
+                                <p className="text-xs sm:text-sm text-gray-600 line-clamp-2">
                                   {sub.description}
                                 </p>
                               )}
                             </div>
                           </div>
 
-                          <div className="flex flex-col items-end gap-2">
+                          <div className="flex flex-col items-end gap-1 sm:gap-2 flex-shrink-0 ml-1">
                             <ChevronUp
-                              className={`h-4 w-4 transition-transform duration-300 ${
+                              className={`h-3 w-3 sm:h-4 sm:w-4 transition-transform duration-300 ${
                                 isOpen ? "rotate-0 text-gray-700" : "rotate-180 text-gray-500"
                               }`}
                             />
@@ -247,9 +249,9 @@ export function ServiceDropdowns() {
                         </button>
 
                         {isOpen && (
-                          <div className="px-5 pb-6">
-                            <div className={`h-px w-full mb-5 opacity-30 ${themeBg[service.theme]}`}></div>
-                            <div className="text-gray-700 leading-relaxed pl-1.5">
+                          <div className="px-3 sm:px-5 pb-4 sm:pb-6">
+                            <div className={`h-px w-full mb-3 sm:mb-5 opacity-30 ${themeBg[service.theme]}`}></div>
+                            <div className="text-gray-700 leading-relaxed text-sm sm:text-base pl-0.5 sm:pl-1.5">
                               {sub.description}
                             </div>
                           </div>

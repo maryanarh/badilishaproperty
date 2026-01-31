@@ -164,7 +164,7 @@ export default function Contact() {
               <h4 className="font-bold text-slate-900 mb-2">Prefer a direct chat?</h4>
               <p className="text-slate-600 mb-4 text-sm">Get quick answers on WhatsApp.</p>
               <a
-                href="https://wa.me/254700000000"
+                href={`https://wa.me/${WHATSAPP_NUMBER}`}
                 target="_blank"
                 className="inline-flex items-center justify-center gap-2 bg-emerald-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-emerald-700 transition-all w-full"
               >
